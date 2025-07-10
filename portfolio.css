@@ -1,0 +1,443 @@
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: url('https://placehold.co/1920x1080/4A4A4A/FFFFFF?text=Background') no-repeat center center fixed; /* Placeholder background */
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #fff;
+    overflow: hidden; /* Prevent body scroll */
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns for widgets */
+    grid-template-rows: auto auto; /* Two rows for widgets */
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px; /* Max width for the grid */
+    width: 95%; /* Responsive width */
+    position: relative;
+}
+
+.widget {
+    background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent dark background */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    display: flex;
+    flex-direction: column;
+    color: #e0e0e0;
+    position: relative;
+    overflow: hidden; /* Ensure content stays within rounded corners */
+}
+
+/* Specific Widget Placements */
+.top-left-widget {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+}
+
+.top-middle-widget {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+.top-right-widget {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+}
+
+.middle-left-widget {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+
+.middle-right-widget {
+    grid-column: 2 / 4; /* Spans two columns */
+    grid-row: 2 / 3;
+}
+
+/* Widget Header Styling */
+.widget-header {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+}
+
+.widget-header i {
+    margin-right: 10px;
+    color: #8aff8a; /* Greenish icon color */
+}
+
+/* Date and Time Widget Styling */
+.date-display {
+    font-size: 4em;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.date-display .month {
+    font-size: 0.4em;
+    display: block;
+    font-weight: 400;
+    opacity: 0.8;
+}
+
+.clock-display {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    margin: 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.clock-face::before {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #fff;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.hour-hand, .minute-hand, .second-hand {
+    position: absolute;
+    transform-origin: bottom center;
+    background-color: #fff;
+    border-radius: 2px;
+}
+
+.hour-hand {
+    width: 4px;
+    height: 40px;
+    top: 20px;
+    background-color: #8aff8a;
+}
+
+.minute-hand {
+    width: 3px;
+    height: 50px;
+    top: 15px;
+}
+
+.second-hand {
+    width: 2px;
+    height: 55px;
+    top: 12.5px;
+    background-color: #ff6b6b;
+}
+
+.time-am-pm {
+    position: absolute;
+    font-size: 0.9em;
+    bottom: 5px;
+    right: 5px;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 2px 5px;
+    border-radius: 5px;
+}
+
+.day-of-week {
+    font-size: 1.5em;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.day-of-week .day-number {
+    font-size: 1.5em;
+    font-weight: 700;
+    display: block;
+    line-height: 1;
+}
+
+.day-of-week .day-name {
+    font-size: 0.8em;
+    opacity: 0.8;
+}
+
+
+/* To-Do List Styling */
+.todo-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.todo-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 0.95em;
+}
+
+.todo-list li input[type="checkbox"] {
+    margin-right: 10px;
+    accent-color: #8aff8a; /* Green checkbox */
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+/* Skills & Technologies Widget Styling */
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.skill-item {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.skill-name {
+    font-weight: 600;
+    font-size: 1.1em;
+    color: #fff;
+}
+
+.skill-level {
+    font-size: 0.8em;
+    color: #b0b0b0;
+    margin-top: 3px;
+}
+
+/* Research Updates Widget Styling */
+.research-updates-scroll {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-right: 10px; /* For scrollbar space */
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: #8aff8a rgba(255, 255, 255, 0.1); /* Firefox */
+}
+
+/* Webkit scrollbar styling */
+.research-updates-scroll::-webkit-scrollbar {
+    width: 8px;
+}
+
+.research-updates-scroll::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.research-updates-scroll::-webkit-scrollbar-thumb {
+    background-color: #8aff8a;
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+
+.update-month {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: #fff;
+    margin-top: 15px;
+    margin-bottom: 8px;
+    padding-bottom: 5px;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+    position: sticky; /* Make month sticky */
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background for sticky month */
+    z-index: 1;
+}
+
+.update-item {
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.update-date {
+    font-weight: 600;
+    color: #8aff8a;
+    display: block;
+    margin-bottom: 3px;
+}
+
+.update-description {
+    font-size: 0.9em;
+    color: #c0c0c0;
+}
+
+.widget-footer {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.widget-footer .footer-link {
+    color: #8aff8a;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.widget-footer .footer-link:hover {
+    background-color: rgba(138, 255, 138, 0.2);
+}
+
+/* Project Links Widget Styling */
+.search-input {
+    width: calc(100% - 20px);
+    padding: 8px 10px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 0.95em;
+    outline: none;
+}
+
+.search-input::placeholder {
+    color: #b0b0b0;
+}
+
+.project-links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
+    gap: 15px;
+    flex-grow: 1;
+}
+
+.project-link-item {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #e0e0e0;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.project-link-item:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-3px);
+}
+
+.project-link-item i {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #8aff8a;
+}
+
+.project-name {
+    font-weight: 600;
+    font-size: 1.1em;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.project-url {
+    font-size: 0.8em;
+    color: #b0b0b0;
+    text-align: center;
+    word-break: break-all; /* Break long URLs */
+}
+
+.add-new-project {
+    margin-top: 20px;
+    text-align: center;
+    color: #8aff8a;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.add-new-project:hover {
+    color: #aaffaa;
+}
+
+.add-new-project i {
+    margin-right: 5px;
+}
+
+.bottom-right-text {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr); /* Two columns on tablets */
+    }
+
+    .middle-right-widget {
+        grid-column: 1 / 3; /* Spans two columns */
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr; /* Single column on mobile */
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .widget {
+        padding: 15px;
+    }
+
+    .top-left-widget, .top-middle-widget, .top-right-widget, .middle-left-widget, .middle-right-widget {
+        grid-column: 1 / 2; /* All span full width */
+        grid-row: auto; /* Auto row placement */
+    }
+
+    .date-display {
+        font-size: 3em;
+    }
+
+    .clock-display {
+        width: 100px;
+        height: 100px;
+    }
+
+    .project-links-grid {
+        grid-template-columns: 1fr; /* Single column for projects on small screens */
+    }
+
+    .bottom-right-text {
+        position: static; /* Adjust position for mobile */
+        text-align: center;
+        margin-top: 20px;
+    }
+}
