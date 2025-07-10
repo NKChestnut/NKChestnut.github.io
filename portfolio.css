@@ -1,9 +1,10 @@
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
-    /* Updated background to better match the image's lighter, abstract feel */
-    background: url('https://placehold.co/1920x1080/E0E8F0/4A4A4A?text=Abstract+Background') no-repeat center center fixed;
-    background-size: cover;
+    /* Recreating the abstract background with gradient and subtle light sources */
+    background: linear-gradient(135deg, #a8e063, #56ab2f, #a1c4fd, #c2e9fb); /* Greenish-blue gradient */
+    background-size: 400% 400%; /* For animation potential, if desired */
+    animation: gradientBackground 15s ease infinite; /* Optional: subtle background animation */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,33 +13,47 @@ body {
     overflow: hidden; /* Prevent body scroll */
 }
 
+/* Optional: Background animation */
+@keyframes gradientBackground {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
 .container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Three columns for widgets */
-    grid-template-rows: auto auto; /* Two rows for widgets */
-    gap: 20px;
+    /* Adjusted grid columns to better match the relative widths in the image */
+    grid-template-columns: 0.8fr 1.2fr 1fr; /* Approx. proportions: Left, Middle, Right */
+    /* Adjusted grid rows to match the two main rows of widgets */
+    grid-template-rows: auto auto;
+    gap: 20px; /* Gap between widgets */
     padding: 20px;
-    max-width: 1200px; /* Max width for the grid */
+    max-width: 1280px; /* Increased max-width to allow more space, closer to image */
     width: 95%; /* Responsive width */
     position: relative;
+    /* Added a subtle overall shadow to the container for depth */
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+    border-radius: 25px; /* Slightly rounded container */
 }
 
 .widget {
-    /* Adjusted background color and blur for a more prominent frosted effect */
-    background-color: rgba(255, 255, 255, 0.15); /* Lighter, more transparent base */
-    backdrop-filter: blur(15px); /* Increased blur for stronger effect */
-    border-radius: 18px; /* Slightly more rounded corners */
-    /* Refined box-shadow for a softer, more diffused glow */
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Slightly more visible border */
+    /* Core frosted glass effect from the image */
+    background-color: rgba(255, 255, 255, 0.1); /* Very light, transparent white */
+    backdrop-filter: blur(18px); /* Stronger blur for more frosted look */
+    -webkit-backdrop-filter: blur(18px); /* Safari compatibility */
+    border-radius: 18px; /* Consistent rounded corners */
+    /* Soft, diffused shadow and subtle inner border */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15); /* Thin, light border */
     display: flex;
     flex-direction: column;
-    color: #e0e0e0;
+    color: #e0e0e0; /* Default text color */
     position: relative;
     overflow: hidden; /* Ensure content stays within rounded corners */
+    padding: 20px; /* Consistent padding */
 }
 
-/* Specific Widget Placements - No change needed here, layout is fine */
+/* Specific Widget Sizing and Placement based on image */
 .top-left-widget {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
@@ -47,26 +62,36 @@ body {
     align-items: center;
     justify-content: center;
     padding: 30px 20px;
+    /* Specific background tint for this widget, as seen in image */
+    background-color: rgba(255, 255, 255, 0.12);
 }
 
 .top-middle-widget {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
+    /* Specific background tint for this widget */
+    background-color: rgba(118, 224, 118, 0.1); /* Greenish tint */
 }
 
 .top-right-widget {
     grid-column: 3 / 4;
     grid-row: 1 / 2;
+    /* Specific background tint for this widget */
+    background-color: rgba(161, 196, 253, 0.1); /* Bluish tint */
 }
 
 .middle-left-widget {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
+    /* Specific background tint for this widget */
+    background-color: rgba(255, 255, 255, 0.12);
 }
 
 .middle-right-widget {
-    grid-column: 2 / 4; /* Spans two columns */
+    grid-column: 2 / 4; /* Spans two columns, matching image */
     grid-row: 2 / 3;
+    /* Specific background tint for this widget */
+    background-color: rgba(118, 224, 118, 0.1); /* Greenish tint */
 }
 
 /* Widget Header Styling */
@@ -77,57 +102,58 @@ body {
     display: flex;
     align-items: center;
     color: #fff;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15); /* Slightly more prominent separator */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Lighter separator */
     padding-bottom: 10px;
 }
 
 .widget-header i {
     margin-right: 10px;
-    color: #76E076; /* Muted greenish icon color, closer to image */
-    text-shadow: 0 0 5px rgba(118, 224, 118, 0.5); /* Subtle glow for icons */
+    color: #8AFF8A; /* Vibrant greenish icon color */
+    text-shadow: 0 0 8px rgba(138, 255, 138, 0.6); /* More prominent glow for icons */
 }
 
 /* Date and Time Widget Styling */
 .date-display {
-    font-size: 4em;
+    font-size: 4.5em; /* Larger font size */
     font-weight: 700;
     line-height: 1;
     text-align: center;
-    margin-bottom: 10px;
-    color: #fff; /* Ensure date numbers are bright white */
+    margin-bottom: 5px; /* Reduced margin */
+    color: #fff;
 }
 
 .date-display .month {
-    font-size: 0.4em;
+    font-size: 0.35em; /* Smaller month text */
     display: block;
     font-weight: 400;
-    opacity: 0.7; /* Slightly less opaque */
-    color: #c0c0c0; /* Softer month color */
+    opacity: 0.8;
+    color: #c0c0c0;
+    text-transform: uppercase; /* Uppercase month */
 }
 
 .clock-display {
     position: relative;
-    width: 120px;
-    height: 120px;
+    width: 140px; /* Larger clock */
+    height: 140px;
     border-radius: 50%;
-    border: 2px solid rgba(255, 255, 255, 0.3); /* Softer border */
+    border: 2px solid rgba(255, 255, 255, 0.3);
     margin: 15px 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.05); /* Very subtle background for clock face */
-    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3); /* Inner shadow for depth */
+    background-color: rgba(0, 0, 0, 0.15); /* Slightly darker background for clock face */
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.4); /* Deeper inner shadow */
 }
 
 .clock-face::before {
     content: '';
     position: absolute;
-    width: 8px;
-    height: 8px;
+    width: 10px; /* Larger center dot */
+    height: 10px;
     background-color: #fff;
     border-radius: 50%;
     z-index: 10;
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.5); /* Glow for the center dot */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* Stronger glow for the center dot */
 }
 
 .hour-hand, .minute-hand, .second-hand {
@@ -135,58 +161,59 @@ body {
     transform-origin: bottom center;
     background-color: #fff;
     border-radius: 2px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Subtle shadow for hands */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
 .hour-hand {
     width: 4px;
-    height: 40px;
-    top: 20px;
-    background-color: #76E076; /* Muted green */
+    height: 45px; /* Longer hour hand */
+    top: 25px;
+    background-color: #8AFF8A; /* Vibrant green */
 }
 
 .minute-hand {
     width: 3px;
-    height: 50px;
+    height: 60px; /* Longer minute hand */
     top: 15px;
 }
 
 .second-hand {
     width: 2px;
-    height: 55px;
-    top: 12.5px;
-    background-color: #FF6B6B; /* Retained red for contrast, as in image */
+    height: 65px; /* Longer second hand */
+    top: 10px;
+    background-color: #FF6B6B; /* Red */
 }
 
 .time-am-pm {
     position: absolute;
-    font-size: 0.9em;
-    bottom: 5px;
-    right: 5px;
-    background-color: rgba(0, 0, 0, 0.4); /* Slightly darker background for clarity */
-    padding: 2px 7px; /* Slightly more padding */
-    border-radius: 8px; /* More rounded */
+    font-size: 0.8em; /* Slightly smaller */
+    bottom: 8px; /* Adjusted position */
+    right: 8px; /* Adjusted position */
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 3px 8px; /* More padding */
+    border-radius: 10px; /* More rounded */
     color: #fff;
 }
 
 .day-of-week {
-    font-size: 1.5em;
+    font-size: 1.8em; /* Larger day of week */
     text-align: center;
     margin-top: 10px;
     color: #fff;
 }
 
 .day-of-week .day-number {
-    font-size: 1.5em;
+    font-size: 1.5em; /* Keep day number prominent */
     font-weight: 700;
     display: block;
     line-height: 1;
 }
 
 .day-of-week .day-name {
-    font-size: 0.8em;
+    font-size: 0.7em; /* Smaller day name */
     opacity: 0.7;
     color: #c0c0c0;
+    text-transform: uppercase; /* Uppercase day name */
 }
 
 
@@ -200,36 +227,36 @@ body {
 .todo-list li {
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 12px; /* More spacing */
     font-size: 0.95em;
-    color: #e0e0e0; /* Consistent text color */
+    color: #e0e0e0;
 }
 
 .todo-list li input[type="checkbox"] {
-    margin-right: 10px;
-    accent-color: #76E076; /* Muted green checkbox */
-    width: 18px;
-    height: 18px;
+    margin-right: 12px; /* More spacing */
+    accent-color: #8AFF8A; /* Vibrant green checkbox */
+    width: 20px; /* Larger checkbox */
+    height: 20px;
     cursor: pointer;
-    border-radius: 4px; /* Slightly rounded checkboxes */
+    border-radius: 5px; /* Slightly more rounded */
 }
 
-/* Skills & Technologies Widget Styling - User liked this, minor tweaks for consistency */
+/* Skills & Technologies Widget Styling */
 .skills-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    gap: 12px; /* Increased gap */
     margin-top: 5px;
 }
 
 .skill-item {
     background-color: rgba(255, 255, 255, 0.08);
-    border-radius: 10px; /* Slightly more rounded */
-    padding: 10px 15px;
+    border-radius: 10px;
+    padding: 12px 15px; /* More padding */
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2); /* Inner shadow for depth */
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
 .skill-name {
@@ -248,9 +275,9 @@ body {
 .research-updates-scroll {
     flex-grow: 1;
     overflow-y: auto;
-    padding-right: 10px; /* For scrollbar space */
+    padding-right: 10px;
     scrollbar-width: thin; /* Firefox */
-    scrollbar-color: #76E076 rgba(255, 255, 255, 0.1); /* Firefox - Muted green scrollbar */
+    scrollbar-color: #8AFF8A rgba(255, 255, 255, 0.1); /* Vibrant green scrollbar */
 }
 
 /* Webkit scrollbar styling */
@@ -264,7 +291,7 @@ body {
 }
 
 .research-updates-scroll::-webkit-scrollbar-thumb {
-    background-color: #76E076; /* Muted green scrollbar thumb */
+    background-color: #8AFF8A; /* Vibrant green scrollbar thumb */
     border-radius: 10px;
     border: 2px solid rgba(255, 255, 255, 0.1);
 }
@@ -277,10 +304,10 @@ body {
     margin-top: 15px;
     margin-bottom: 8px;
     padding-bottom: 5px;
-    border-bottom: 1px dashed rgba(255, 255, 255, 0.15); /* Slightly more prominent dashed line */
-    position: sticky; /* Make month sticky */
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.15);
+    position: sticky;
     top: 0;
-    background-color: rgba(255, 255, 255, 0.1); /* Lighter semi-transparent background for sticky month */
+    background-color: rgba(255, 255, 255, 0.15); /* Slightly more opaque for sticky effect */
     z-index: 1;
 }
 
@@ -291,7 +318,7 @@ body {
 
 .update-date {
     font-weight: 600;
-    color: #76E076; /* Muted green for dates */
+    color: #8AFF8A; /* Vibrant green for dates */
     display: block;
     margin-bottom: 3px;
 }
@@ -306,35 +333,35 @@ body {
     justify-content: space-around;
     margin-top: 15px;
     padding-top: 10px;
-    border-top: 1px solid rgba(255, 255, 255, 0.15); /* Slightly more prominent separator */
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .widget-footer .footer-link {
-    color: #76E076; /* Muted green */
+    color: #8AFF8A; /* Vibrant green */
     text-decoration: none;
     font-weight: 600;
     padding: 5px 10px;
-    border-radius: 8px; /* More rounded */
+    border-radius: 8px;
     transition: background-color 0.3s ease;
 }
 
 .widget-footer .footer-link:hover {
-    background-color: rgba(118, 224, 118, 0.2); /* Hover effect with muted green */
+    background-color: rgba(138, 255, 138, 0.2);
 }
 
 /* Project Links Widget Styling */
 .search-input {
     width: calc(100% - 20px);
-    padding: 8px 12px; /* Increased padding */
+    padding: 8px 12px;
     margin-top: 10px;
     margin-bottom: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.25); /* More visible border */
-    border-radius: 10px; /* More rounded */
-    background-color: rgba(255, 255, 255, 0.1); /* Lighter background */
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
     color: #fff;
     font-size: 0.95em;
     outline: none;
-    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2); /* Inner shadow */
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
 .search-input::placeholder {
@@ -343,14 +370,15 @@ body {
 
 .project-links-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
+    /* Adjusted grid for project links to match the 3x2 layout in the image */
+    grid-template-columns: repeat(3, 1fr);
     gap: 15px;
     flex-grow: 1;
 }
 
 .project-link-item {
     background-color: rgba(255, 255, 255, 0.08);
-    border-radius: 12px; /* More rounded */
+    border-radius: 12px;
     padding: 15px;
     display: flex;
     flex-direction: column;
@@ -358,7 +386,7 @@ body {
     text-decoration: none;
     color: #e0e0e0;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2); /* Inner shadow for depth */
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
 .project-link-item:hover {
@@ -369,8 +397,8 @@ body {
 .project-link-item i {
     font-size: 2.5em;
     margin-bottom: 10px;
-    color: #76E076; /* Muted green */
-    text-shadow: 0 0 5px rgba(118, 224, 118, 0.5); /* Subtle glow */
+    color: #8AFF8A; /* Vibrant green */
+    text-shadow: 0 0 8px rgba(138, 255, 138, 0.6); /* Stronger glow */
 }
 
 .project-name {
@@ -384,20 +412,20 @@ body {
     font-size: 0.8em;
     color: #b0b0b0;
     text-align: center;
-    word-break: break-all; /* Break long URLs */
+    word-break: break-all;
 }
 
 .add-new-project {
     margin-top: 20px;
     text-align: center;
-    color: #76E076; /* Muted green */
+    color: #8AFF8A; /* Vibrant green */
     font-weight: 600;
     cursor: pointer;
     transition: color 0.3s ease;
 }
 
 .add-new-project:hover {
-    color: #90ee90; /* Slightly lighter green on hover */
+    color: #90ee90;
 }
 
 .add-new-project i {
@@ -418,8 +446,26 @@ body {
         grid-template-columns: repeat(2, 1fr); /* Two columns on tablets */
     }
 
+    .top-left-widget {
+        grid-column: 1 / 2;
+    }
+    .top-middle-widget {
+        grid-column: 2 / 3;
+    }
+    .top-right-widget {
+        grid-column: 1 / 3; /* Spans two columns on tablet */
+        grid-row: 2 / 3; /* Moves to second row, spanning */
+    }
+    .middle-left-widget {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4; /* Moves to third row */
+    }
     .middle-right-widget {
-        grid-column: 1 / 3; /* Spans two columns */
+        grid-column: 2 / 3; /* Spans one column */
+        grid-row: 3 / 4; /* Moves to third row */
+    }
+    .project-links-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for projects on tablets */
     }
 }
 
@@ -432,7 +478,7 @@ body {
 
     .widget {
         padding: 15px;
-        border-radius: 15px; /* Slightly less rounded on mobile for compactness */
+        border-radius: 15px;
     }
 
     .top-left-widget, .top-middle-widget, .top-right-widget, .middle-left-widget, .middle-right-widget {
@@ -441,12 +487,12 @@ body {
     }
 
     .date-display {
-        font-size: 3em;
+        font-size: 3.5em;
     }
 
     .clock-display {
-        width: 100px;
-        height: 100px;
+        width: 120px;
+        height: 120px;
     }
 
     .project-links-grid {
@@ -454,9 +500,9 @@ body {
     }
 
     .bottom-right-text {
-        position: static; /* Adjust position for mobile */
+        position: static;
         text-align: center;
         margin-top: 20px;
-        margin-bottom: 10px; /* Add some space at the bottom */
+        margin-bottom: 10px;
     }
 }
