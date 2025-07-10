@@ -1,52 +1,95 @@
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
-    /* More subtle background to match the image's soft, abstract light */
-    background: radial-gradient(circle at 70% 30%, rgba(161, 196, 253, 0.2), transparent 50%),
-                radial-gradient(circle at 30% 80%, rgba(138, 255, 138, 0.2), transparent 50%),
-                #1a1a1a; /* Darker base background for contrast with light widgets */
-    background-size: cover;
+    /* Frutiger Aero + Solarpunk Background: Brighter, atmospheric, with subtle glows */
+    background: linear-gradient(160deg, #b0e0e6 0%, #87ceeb 30%, #a0d6b4 70%, #98fb98 100%); /* Soft blues and greens */
+    position: relative; /* For pseudo-elements */
+    overflow: hidden; /* Prevent body scroll */
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
     color: #fff;
-    overflow: hidden; /* Prevent body scroll */
 }
+
+/* Subtle light source effects for Frutiger Aero feel */
+body::before,
+body::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.6;
+    z-index: -1;
+}
+
+body::before {
+    background: radial-gradient(circle, rgba(173, 216, 230, 0.8), transparent); /* Light blue glow */
+    width: 400px;
+    height: 400px;
+    top: -100px;
+    left: -100px;
+}
+
+body::after {
+    background: radial-gradient(circle, rgba(144, 238, 144, 0.8), transparent); /* Light green glow */
+    width: 350px;
+    height: 350px;
+    bottom: -100px;
+    right: -100px;
+}
+
 
 .container {
     display: grid;
-    /* Adjusted grid columns to very closely match the relative widths in the image */
-    /* Left column (date/research) is narrower, middle (todo) slightly wider, right (skills) wider still */
-    grid-template-columns: 0.8fr 1.1fr 1.3fr;
-    /* Adjusted grid rows to match the two main rows of widgets, with flexible height */
-    grid-template-rows: minmax(250px, auto) minmax(350px, auto); /* Minimum heights for better initial layout */
+    /* Meticulously adjusted grid columns to match the relative widths in the image */
+    /* Visual estimation: Left (Date/Research) is smallest, Middle (To-Do) medium, Right (Skills) largest */
+    grid-template-columns: 0.75fr 1.1fr 1.35fr;
+    /* Adjusted grid rows to match the two distinct rows of widgets, with more defined heights */
+    grid-template-rows: minmax(260px, auto) minmax(360px, auto); /* More precise min-heights */
     gap: 18px; /* Slightly adjusted gap */
-    padding: 20px;
-    max-width: 1280px; /* Max width to contain the layout */
+    padding: 25px; /* Increased padding around the grid */
+    max-width: 1250px; /* Adjusted max-width to better fit the overall proportions */
     width: 95%; /* Responsive width */
     position: relative;
-    /* Subtle overall shadow for the container */
-    box-shadow: 0 15px 60px rgba(0, 0, 0, 0.5);
-    border-radius: 20px; /* Consistent rounded corners */
+    /* Softer, more diffused overall shadow for the container */
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+    border-radius: 25px; /* More rounded container */
 }
 
 .widget {
-    /* Core frosted glass effect from the image - refined */
-    background-color: rgba(255, 255, 255, 0.1); /* Very light, subtle transparency */
-    backdrop-filter: blur(20px); /* Stronger blur for a more pronounced frosted look */
-    -webkit-backdrop-filter: blur(20px); /* Safari compatibility */
-    border-radius: 18px; /* Consistent rounded corners */
-    /* Soft, diffused shadow and very subtle inner border */
-    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.3), inset 0 0 0 1px rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.1); /* Very thin, almost invisible border */
+    /* Core frosted glass effect - refined for exact match, with glossy touches */
+    background-color: rgba(255, 255, 255, 0.15); /* Slightly more opaque white for better presence */
+    backdrop-filter: blur(18px); /* Stronger blur for a more pronounced frosted look */
+    -webkit-backdrop-filter: blur(18px); /* Safari compatibility */
+    border-radius: 20px; /* Consistent, slightly more rounded corners */
+    /* Multi-layered shadow for depth and subtle glow, mimicking Frutiger Aero */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), /* Main shadow */
+                inset 0 0 0 1px rgba(255, 255, 255, 0.15); /* Inner light border */
+    /* Subtle gradient border for an iridescent, glossy edge */
+    border: 1px solid transparent;
+    border-image: linear-gradient(45deg, rgba(255,255,255,0.3), rgba(255,255,255,0.1), rgba(255,255,255,0.3)) 1;
     display: flex;
     flex-direction: column;
-    color: #e0e0e0; /* Default text color */
+    color: #f0f0f0; /* Lighter default text color */
     position: relative;
     overflow: hidden; /* Ensure content stays within rounded corners */
-    padding: 20px; /* Consistent padding */
+    padding: 22px; /* Consistent padding */
 }
+
+/* Subtle glossy overlay for widgets */
+.widget::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, transparent 50%, rgba(0, 0, 0, 0.05) 100%);
+    pointer-events: none;
+    border-radius: inherit; /* Inherit border-radius from parent */
+}
+
 
 /* Specific Widget Sizing and Placement based on image */
 .top-left-widget {
@@ -56,23 +99,23 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 25px 15px; /* Adjusted padding */
-    /* Specific background tint for this widget, as seen in image */
+    padding: 30px 20px; /* Adjusted padding */
+    /* Specific background tint for this widget, slightly darker for depth */
     background-color: rgba(255, 255, 255, 0.12);
 }
 
 .top-middle-widget {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
-    /* Specific background tint for this widget - more pronounced green */
-    background-color: rgba(138, 255, 138, 0.1); /* Greenish tint */
+    /* Specific background tint for this widget - more vibrant green tint */
+    background-color: rgba(138, 255, 138, 0.1);
 }
 
 .top-right-widget {
     grid-column: 3 / 4;
     grid-row: 1 / 2;
-    /* Specific background tint for this widget - more pronounced blue */
-    background-color: rgba(161, 196, 253, 0.1); /* Bluish tint */
+    /* Specific background tint for this widget - more vibrant blue tint */
+    background-color: rgba(161, 196, 253, 0.1);
 }
 
 .middle-left-widget {
@@ -85,26 +128,26 @@ body {
 .middle-right-widget {
     grid-column: 2 / 4; /* Spans two columns, matching image */
     grid-row: 2 / 3;
-    /* Specific background tint for this widget - more pronounced green */
-    background-color: rgba(138, 255, 138, 0.1); /* Greenish tint */
+    /* Specific background tint for this widget - more vibrant green tint */
+    background-color: rgba(138, 255, 138, 0.1);
 }
 
 /* Widget Header Styling */
 .widget-header {
-    font-size: 1.15em; /* Slightly smaller header font */
+    font-size: 1.1em;
     font-weight: 600;
     margin-bottom: 15px;
     display: flex;
     align-items: center;
     color: #fff;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08); /* Very light separator */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Lighter separator */
     padding-bottom: 10px;
 }
 
 .widget-header i {
     margin-right: 10px;
-    color: #8AFF8A; /* Vibrant greenish icon color */
-    text-shadow: 0 0 6px rgba(138, 255, 138, 0.7); /* Stronger glow for icons */
+    color: #66CC99; /* A more balanced green for icons */
+    text-shadow: 0 0 8px rgba(102, 204, 153, 0.8); /* Stronger, more diffused glow */
 }
 
 /* Date and Time Widget Styling */
@@ -113,7 +156,7 @@ body {
     font-weight: 700;
     line-height: 1;
     text-align: center;
-    margin-bottom: 2px; /* Reduced margin */
+    margin-bottom: 0px;
     color: #fff;
 }
 
@@ -128,16 +171,17 @@ body {
 
 .clock-display {
     position: relative;
-    width: 130px; /* Adjusted clock size */
-    height: 130px;
+    width: 140px; /* Larger clock */
+    height: 140px;
     border-radius: 50%;
-    border: 2px solid rgba(255, 255, 255, 0.2); /* Softer border */
-    margin: 10px 0; /* Adjusted margin */
+    border: 2px solid rgba(255, 255, 255, 0.25); /* Softer, slightly more visible border */
+    margin: 15px 0; /* Adjusted margin */
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.1); /* Lighter background for clock face */
-    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.3); /* Deeper inner shadow */
+    background-color: rgba(0, 0, 0, 0.15); /* Lighter background for clock face */
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.4), /* Deeper inner shadow */
+                0 0 10px rgba(255, 255, 255, 0.1); /* Subtle outer glow */
 }
 
 .clock-face::before {
@@ -148,64 +192,64 @@ body {
     background-color: #fff;
     border-radius: 50%;
     z-index: 10;
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.8); /* Stronger glow for the center dot */
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.9); /* Stronger glow for the center dot */
 }
 
 .hour-hand, .minute-hand, .second-hand {
     position: absolute;
     transform-origin: bottom center;
     background-color: #fff;
-    border-radius: 2px;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+    border-radius: 2px; /* Slightly thicker hands */
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
 }
 
 .hour-hand {
-    width: 3px; /* Thinner hour hand */
-    height: 40px; /* Adjusted length */
+    width: 4px;
+    height: 45px; /* Adjusted length */
     top: 25px;
-    background-color: #8AFF8A; /* Vibrant green */
+    background-color: #66CC99; /* More balanced green */
 }
 
 .minute-hand {
-    width: 2.5px; /* Thinner minute hand */
-    height: 55px; /* Adjusted length */
+    width: 3px;
+    height: 60px; /* Adjusted length */
     top: 15px;
 }
 
 .second-hand {
-    width: 1.5px; /* Thinner second hand */
-    height: 60px; /* Adjusted length */
+    width: 2px;
+    height: 65px; /* Adjusted length */
     top: 10px;
     background-color: #FF6B6B; /* Red */
 }
 
 .time-am-pm {
     position: absolute;
-    font-size: 0.75em; /* Smaller font size */
-    bottom: 5px; /* Adjusted position */
-    right: 5px; /* Adjusted position */
+    font-size: 0.8em; /* Slightly larger font size */
+    bottom: 8px; /* Adjusted position */
+    right: 8px; /* Adjusted position */
     background-color: rgba(0, 0, 0, 0.4);
-    padding: 2px 6px; /* Adjusted padding */
+    padding: 3px 7px; /* Adjusted padding */
     border-radius: 8px;
     color: #fff;
 }
 
 .day-of-week {
-    font-size: 1.6em; /* Adjusted day of week font size */
+    font-size: 1.8em; /* Adjusted day of week font size */
     text-align: center;
-    margin-top: 8px; /* Adjusted margin */
+    margin-top: 10px; /* Adjusted margin */
     color: #fff;
 }
 
 .day-of-week .day-number {
-    font-size: 1.4em; /* Adjusted day number font size */
+    font-size: 1.5em; /* Adjusted day number font size */
     font-weight: 700;
     display: block;
     line-height: 1;
 }
 
 .day-of-week .day-name {
-    font-size: 0.65em; /* Smaller day name */
+    font-size: 0.7em; /* Smaller day name */
     opacity: 0.7;
     color: #c0c0c0;
     text-transform: uppercase;
@@ -223,17 +267,19 @@ body {
     display: flex;
     align-items: center;
     margin-bottom: 10px; /* Adjusted spacing */
-    font-size: 0.9em; /* Slightly smaller font */
+    font-size: 0.9em;
     color: #e0e0e0;
 }
 
 .todo-list li input[type="checkbox"] {
     margin-right: 10px; /* Adjusted spacing */
-    accent-color: #8AFF8A; /* Vibrant green checkbox */
+    accent-color: #66CC99; /* More balanced green checkbox */
     width: 18px; /* Adjusted checkbox size */
     height: 18px;
     cursor: pointer;
     border-radius: 4px;
+    /* Subtle glossy effect for checkbox */
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.3), 0 1px 0 rgba(255,255,255,0.1);
 }
 
 /* Skills & Technologies Widget Styling */
@@ -245,23 +291,23 @@ body {
 }
 
 .skill-item {
-    background-color: rgba(255, 255, 255, 0.06); /* Lighter background */
-    border-radius: 8px; /* Slightly less rounded */
+    background-color: rgba(255, 255, 255, 0.08); /* Slightly more opaque background */
+    border-radius: 10px; /* Slightly more rounded */
     padding: 10px 12px; /* Adjusted padding */
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.15); /* Softer inner shadow */
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2); /* Deeper inner shadow */
 }
 
 .skill-name {
     font-weight: 600;
-    font-size: 1em; /* Slightly smaller font */
+    font-size: 1em;
     color: #fff;
 }
 
 .skill-level {
-    font-size: 0.75em; /* Smaller font */
+    font-size: 0.75em;
     color: #b0b0b0;
     margin-top: 2px;
 }
@@ -270,9 +316,9 @@ body {
 .research-updates-scroll {
     flex-grow: 1;
     overflow-y: auto;
-    padding-right: 8px; /* Adjusted padding */
+    padding-right: 8px; /* Thinner scrollbar area */
     scrollbar-width: thin; /* Firefox */
-    scrollbar-color: #8AFF8A rgba(255, 255, 255, 0.08); /* Vibrant green scrollbar */
+    scrollbar-color: #66CC99 rgba(255, 255, 255, 0.08); /* More balanced green scrollbar */
 }
 
 /* Webkit scrollbar styling */
@@ -286,19 +332,19 @@ body {
 }
 
 .research-updates-scroll::-webkit-scrollbar-thumb {
-    background-color: #8AFF8A; /* Vibrant green scrollbar thumb */
+    background-color: #66CC99; /* More balanced green scrollbar thumb */
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.05); /* Very subtle border */
 }
 
 
 .update-month {
-    font-size: 1.05em; /* Slightly smaller font */
+    font-size: 1em;
     font-weight: 700;
     color: #fff;
     margin-top: 12px; /* Adjusted margin */
     margin-bottom: 6px; /* Adjusted margin */
-    padding-bottom: 4px; /* Adjusted padding */
+    padding-bottom: 5px; /* Adjusted padding */
     border-bottom: 1px dashed rgba(255, 255, 255, 0.1); /* Lighter dashed line */
     position: sticky;
     top: 0;
@@ -313,50 +359,51 @@ body {
 
 .update-date {
     font-weight: 600;
-    color: #8AFF8A; /* Vibrant green for dates */
+    color: #66CC99; /* More balanced green for dates */
     display: block;
+    font-size: 0.9em; /* Adjusted font size */
     margin-bottom: 2px;
 }
 
 .update-description {
-    font-size: 0.85em; /* Slightly smaller font */
+    font-size: 0.85em; /* Adjusted font size */
     color: #c0c0c0;
 }
 
 .widget-footer {
     display: flex;
     justify-content: space-around;
-    margin-top: 15px;
-    padding-top: 10px;
+    margin-top: 15px; /* Adjusted margin */
+    padding-top: 10px; /* Adjusted padding */
     border-top: 1px solid rgba(255, 255, 255, 0.1); /* Lighter border */
 }
 
 .widget-footer .footer-link {
-    color: #8AFF8A; /* Vibrant green */
+    color: #66CC99; /* More balanced green */
     text-decoration: none;
     font-weight: 600;
-    padding: 4px 8px; /* Adjusted padding */
-    border-radius: 6px; /* Slightly less rounded */
+    padding: 4px 8px;
+    border-radius: 6px;
     transition: background-color 0.3s ease;
 }
 
 .widget-footer .footer-link:hover {
-    background-color: rgba(138, 255, 138, 0.15); /* Softer hover effect */
+    background-color: rgba(102, 204, 153, 0.15); /* Softer hover effect */
 }
 
 /* Project Links Widget Styling */
 .search-input {
     width: calc(100% - 20px);
-    padding: 7px 10px; /* Adjusted padding */
+    padding: 8px 10px; /* Adjusted padding */
     margin-top: 10px;
     margin-bottom: 12px; /* Adjusted margin */
     border: 1px solid rgba(255, 255, 255, 0.2); /* Softer border */
     border-radius: 8px; /* Slightly less rounded */
     background-color: rgba(255, 255, 255, 0.08); /* Lighter background */
     color: #fff;
-    font-size: 0.9em; /* Slightly smaller font */
+    font-size: 0.9em;
     outline: none;
-    box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.15); /* Softer inner shadow */
+    box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2); /* Softer inner shadow */
 }
 
 .search-input::placeholder {
@@ -373,7 +420,7 @@ body {
 
 .project-link-item {
     background-color: rgba(255, 255, 255, 0.06); /* Lighter background */
-    border-radius: 10px; /* Slightly less rounded */
+    border-radius: 10px;
     padding: 12px; /* Adjusted padding */
     display: flex;
     flex-direction: column;
@@ -381,46 +428,47 @@ body {
     text-decoration: none;
     color: #e0e0e0;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.15); /* Softer inner shadow */
+    /* Subtle glossy shadow for links */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
 }
 
 .project-link-item:hover {
     background-color: rgba(255, 255, 255, 0.12); /* Softer hover effect */
-    transform: translateY(-2px); /* Less pronounced lift */
+    transform: translateY(-2px); /* Subtle lift */
 }
 
 .project-link-item i {
     font-size: 2.2em; /* Slightly smaller icon size */
-    margin-bottom: 8px; /* Adjusted margin */
-    color: #8AFF8A; /* Vibrant green */
-    text-shadow: 0 0 6px rgba(138, 255, 138, 0.7); /* Stronger glow */
+    margin-bottom: 8px;
+    color: #66CC99; /* More balanced green */
+    text-shadow: 0 0 6px rgba(102, 204, 153, 0.8); /* Stronger glow */
 }
 
 .project-name {
     font-weight: 600;
-    font-size: 1em; /* Slightly smaller font */
+    font-size: 0.95em;
     text-align: center;
     margin-bottom: 4px;
 }
 
 .project-url {
-    font-size: 0.75em; /* Smaller font */
+    font-size: 0.75em;
     color: #b0b0b0;
     text-align: center;
     word-break: break-all;
 }
 
 .add-new-project {
-    margin-top: 18px; /* Adjusted margin */
+    margin-top: 18px;
     text-align: center;
-    color: #8AFF8A; /* Vibrant green */
+    color: #66CC99; /* More balanced green */
     font-weight: 600;
     cursor: pointer;
     transition: color 0.3s ease;
 }
 
 .add-new-project:hover {
-    color: #90ee90;
+    color: #80e0b0;
 }
 
 .add-new-project i {
@@ -429,10 +477,10 @@ body {
 
 .bottom-right-text {
     position: absolute;
-    bottom: 15px; /* Adjusted position */
-    right: 15px; /* Adjusted position */
-    color: rgba(255, 255, 255, 0.5); /* Slightly more transparent */
-    font-size: 0.85em; /* Slightly smaller font */
+    bottom: 15px;
+    right: 15px;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.85em;
 }
 
 /* Responsive adjustments */
@@ -483,12 +531,12 @@ body {
     }
 
     .date-display {
-        font-size: 3.2em;
+        font-size: 3em;
     }
 
     .clock-display {
-        width: 100px;
-        height: 100px;
+        width: 90px;
+        height: 90px;
     }
 
     .project-links-grid {
