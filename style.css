@@ -98,7 +98,7 @@ body {
     width: 100%;
     min-height: 100vh; /* Ensure body takes full viewport height */
     background-color: #F8F8F8; /* Very light grey/off-white background */
-    background-image: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23E0E6F0" fill-opacity="0.3"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0 20v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zm0 20v-4H4v4H0v2h4v4h2v-4h4v-2H6zM36 4v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM6 4v-4H4v4H0v2h4v4h2v-4h4v-2H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E'); /* Subtle, very light blue/grey geometric pattern */
+    background-image: url('https://static.wikia.nocookie.net/2000-aesthetics/images/a/a6/Frutiger_Aurora.png/revision/latest/thumbnail/width/360/height/360?cb=20231225201914'); /* Subtle, very light blue/grey geometric pattern */
     color: #4A4A4A; /* Dark grey text for readability */
     font-family: Verdana, sans-serif;
     position: relative;
