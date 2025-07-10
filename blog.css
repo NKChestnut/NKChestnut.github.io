@@ -1,0 +1,521 @@
+/* Import Google Fonts: Inter for general text, and a display font that feels modern yet slightly whimsical */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Montserrat:wght@700&display=swap');
+
+/* Custom CSS Variables for gradients and shadows based on new inspiration */
+:root {
+    /* Base gradient for headers, footers, and main buttons */
+    --header-footer-base-gradient: linear-gradient(
+        180deg,
+        rgba(139, 46, 29, 0.7) 0%, /* Reddish-brown */
+        rgba(209, 122, 47, 0.7) 50%, /* Orange-brown */
+        rgba(209, 166, 47, 0.7) 100% /* Golden-yellow */
+    );
+
+    /* Top layer for glossy effect on headers, footers, and main buttons */
+    --glossy-top-layer: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.25) 0%,
+        rgba(255, 255, 255, 0.1) 49%,
+        rgba(255, 255, 255, 0) 50%
+    );
+
+    /* Box shadow for headers, footers, and main buttons */
+    --header-footer-box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3),
+                                inset 0px 2px 1px rgba(255, 255, 255, 0.3),
+                                inset 0px -2px 1px rgba(0, 0, 0, 0.4);
+
+    /* Base gradient for containers (main content area, cards) */
+    --container-base-gradient: linear-gradient(
+        180deg,
+        rgba(168, 184, 158, 0.7) 0%, /* Light olive green */
+        rgba(106, 142, 108, 0.7) 50%, /* Dark olive green */
+        rgba(139, 46, 29, 0.7) 100% /* Reddish-brown */
+    );
+
+    /* Box shadow for containers (main content area, cards) */
+    --container-box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.3),
+                            inset 0px 2px 1px rgba(255, 255, 255, 0.3),
+                            inset 0px -2px 1px rgba(0, 0, 0, 0.4);
+
+    /* Hover effect gradient */
+    --hover-gradient-overlay: linear-gradient(
+        180deg,
+        rgba(209, 166, 47, 0.1) 30%, /* Golden-yellow light */
+        rgba(209, 122, 47, 0.2) 100% /* Orange-brown light */
+    );
+}
+
+/* Custom Scrollbar - Modern, translucent feel, updated with new palette */
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1); /* Light, subtle track */
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(209, 122, 47, 0.7); /* Translucent orange-brown thumb */
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(139, 46, 29, 0.9); /* Darker reddish-brown on hover */
+}
+
+/* Base Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    /* Background: Using the provided image URL */
+    background: url("https://64.media.tumblr.com/0057dd031e182a3bc79672665b4bfc38/f304b9c8d0b35926-33/s1280x1920/b0e13f52fde99589b25b23cdda64c8d62aac2147.jpg") no-repeat center center fixed;
+    background-size: cover;
+    color: #49423f; /* Dark text from previous palette, fits earthy tones */
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container {
+    /* Applying containers-style-content inspired gradient and shadow */
+    background: var(--container-base-gradient);
+    box-shadow: var(--container-box-shadow);
+    backdrop-filter: blur(15px); /* Stronger blur */
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle white border */
+    border-radius: 20px; /* Kept rounded corners for modern feel */
+    max-width: 1200px;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    position: relative; /* For hover effect */
+}
+
+/* Header - Glossy and prominent, updated with new palette and gradient inspiration */
+.header {
+    background: var(--glossy-top-layer), var(--header-footer-base-gradient);
+    background-blend-mode: overlay, normal; /* Ensure top layer blends correctly */
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px 20px 0 0;
+    box-shadow: var(--header-footer-box-shadow);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden; /* For pseudo-element glow */
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1), transparent 70%);
+    opacity: 0.8;
+    transform: rotate(45deg);
+    pointer-events: none;
+}
+
+.site-title {
+    font-family: 'Montserrat', sans-serif; /* Bold display font */
+    font-size: 3.5em;
+    margin: 0;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+    letter-spacing: 1px;
+}
+
+.site-tagline {
+    font-size: 1.2em;
+    margin-top: 10px;
+    opacity: 0.9;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Home Button Container - Integrated into the glass theme, updated with new palette and gradient inspiration */
+.home-button-container {
+    padding: 15px 20px;
+    background: var(--container-base-gradient); /* Using container base for consistency */
+    box-shadow: var(--container-box-shadow);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative; /* For hover effect */
+    overflow: hidden;
+}
+
+.home-button {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 12px 25px;
+    border-radius: 15px;
+    /* Glossy button background, updated with new palette and gradient inspiration */
+    background: var(--glossy-top-layer), linear-gradient(135deg, rgba(209, 166, 47, 0.9), rgba(209, 122, 47, 0.9)); /* Golden-yellow to orange-brown */
+    background-blend-mode: overlay, normal;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.4); /* White border for gloss */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    position: relative; /* For hover effect */
+    z-index: 2; /* Ensure button is above hover pseudo-element */
+}
+
+/* Hover effect for buttons */
+.home-button::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--hover-gradient-overlay);
+    border-radius: 15px; /* Match button border-radius */
+    opacity: 0;
+    transition: opacity 0.2s ease-in;
+    z-index: 1;
+}
+
+.home-button:hover::before {
+    opacity: 1;
+}
+
+.home-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3), 0 0 15px rgba(209, 122, 47, 0.7); /* Added orange-brown glow */
+}
+
+/* Main Content Layout */
+.main-content {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 20px;
+}
+
+.blog-posts {
+    flex: 3;
+    min-width: 300px;
+}
+
+.sidebar {
+    flex: 1;
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.section-title {
+    font-size: 2.2em;
+    color: #8B2E1D; /* Reddish-brown title */
+    margin-bottom: 25px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: #D1A62F; /* Golden-yellow underline */
+    border-radius: 5px;
+}
+
+/* Blog Post Cards - Glassy panels, updated with new palette and gradient inspiration */
+.blog-post-card {
+    background: var(--container-base-gradient); /* Using container base for consistency */
+    box-shadow: var(--container-box-shadow);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 20px;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.blog-post-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25),
+                0 0 20px rgba(168, 184, 158, 0.6); /* Stronger light olive green glow on hover */
+}
+
+.post-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.post-link:hover .post-title {
+    color: #D17A2F; /* Orange-brown on hover */
+    text-decoration: underline;
+}
+
+.post-title {
+    color: #8B2E1D; /* Reddish-brown title */
+    font-size: 1.8em;
+    margin-top: 0;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.post-meta {
+    font-size: 0.9em;
+    color: #6A8E6C; /* Dark olive green for meta */
+    margin-bottom: 15px;
+}
+
+.post-excerpt {
+    margin-bottom: 20px;
+}
+
+.full-post-content {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3); /* Translucent separator */
+}
+
+.read-more-btn {
+    display: inline-block;
+    /* Applying glossy top layer and base gradient */
+    background: var(--glossy-top-layer), linear-gradient(135deg, #D17A2F, #D1A62F); /* Orange-brown to Golden-yellow gradient */
+    background-blend-mode: overlay, normal;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    position: relative; /* For hover effect */
+    z-index: 2; /* Ensure button is above hover pseudo-element */
+}
+
+/* Hover effect for read more button */
+.read-more-btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--hover-gradient-overlay);
+    border-radius: 10px; /* Match button border-radius */
+    opacity: 0;
+    transition: opacity 0.2s ease-in;
+    z-index: 1;
+}
+
+.read-more-btn:hover::before {
+    opacity: 1;
+}
+
+.read-more-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3), 0 0 10px rgba(209, 166, 47, 0.7); /* Added golden-yellow glow */
+}
+
+.read-more-btn.show-less {
+    background: var(--glossy-top-layer), linear-gradient(135deg, #8B2E1D, #D17A2F); /* Reddish-brown to Orange-brown for 'Show Less' */
+    background-blend-mode: overlay, normal;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.read-more-btn.show-less:hover {
+    background: var(--glossy-top-layer), linear-gradient(135deg, #D17A2F, #8B2E1D);
+    background-blend-mode: overlay, normal;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3), 0 0 10px rgba(139, 46, 29, 0.7);
+}
+
+/* Sidebar Cards - Glassy panels, updated with new palette and gradient inspiration */
+.sidebar-card {
+    background: var(--container-base-gradient); /* Using container base for consistency */
+    box-shadow: var(--container-box-shadow);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.sidebar-title {
+    font-family: 'Montserrat', sans-serif; /* Bold display font */
+    color: #8B2E1D; /* Reddish-brown title */
+    font-size: 1.6em;
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 8px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #D1A62F; /* Golden-yellow underline */
+    border-radius: 5px;
+}
+
+/* Tag filter specific styles, updated with new palette and gradient inspiration */
+.tag-buttons-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.tag-button {
+    /* Applying glossy top layer and base gradient */
+    background: var(--glossy-top-layer), linear-gradient(135deg, rgba(209, 122, 47, 0.8), rgba(209, 166, 47, 0.8)); /* Orange-brown to Golden-yellow gradient */
+    background-blend-mode: overlay, normal;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.9em;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    position: relative; /* For hover effect */
+    z-index: 2; /* Ensure button is above hover pseudo-element */
+}
+
+/* Hover effect for tag buttons */
+.tag-button::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--hover-gradient-overlay);
+    border-radius: 10px; /* Match button border-radius */
+    opacity: 0;
+    transition: opacity 0.2s ease-in;
+    z-index: 1;
+}
+
+.tag-button:hover::before {
+    opacity: 1;
+}
+
+.tag-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.tag-button.active {
+    background: var(--glossy-top-layer), linear-gradient(135deg, rgba(139, 46, 29, 0.9), rgba(209, 122, 47, 0.9)); /* Reddish-brown to Orange-brown when active */
+    background-blend-mode: overlay, normal;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3), 0 0 10px rgba(139, 46, 29, 0.7); /* Added glow */
+    transform: translateY(-1px);
+}
+
+/* Footer - Glossy and prominent, updated with new palette and gradient inspiration */
+.footer {
+    background: var(--glossy-top-layer), var(--header-footer-base-gradient);
+    background-blend-mode: overlay, normal;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+    border-top: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 0 0 20px 20px;
+    box-shadow: inset 0 5px 15px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+    }
+
+    .header {
+        padding: 25px 15px;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .site-title {
+        font-size: 2.5em;
+    }
+
+    .site-tagline {
+        font-size: 1em;
+    }
+
+    .home-button-container {
+        padding: 10px 15px;
+    }
+
+    .home-button {
+        padding: 10px 20px;
+        font-size: 0.9em;
+        border-radius: 10px;
+    }
+
+    .main-content {
+        flex-direction: column;
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .blog-posts,
+    .sidebar {
+        flex: none;
+        width: 100%;
+        min-width: unset;
+    }
+
+    .blog-post-card,
+    .sidebar-card {
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .post-title {
+        font-size: 1.5em;
+    }
+
+    .footer {
+        padding: 15px;
+        border-radius: 0 0 10px 10px;
+    }
+    .tag-button {
+        font-size: 0.8em;
+        padding: 6px 10px;
+    }
+}
