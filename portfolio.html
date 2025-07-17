@@ -3,209 +3,536 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nadia's Portfolio</title>
-    <link rel="stylesheet" href="portfolio.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body>
-    <div class="container">
-        <!-- Top Left Widget: Date and Time -->
-        <div class="widget top-left-widget">
-            <div class="date-display">
-                <span class="day-of-month">07</span>
-                <span class="month">Month</span>
-            </div>
-            <div class="clock-display">
-                <div class="clock-face">
-                    <div class="hour-hand"></div>
-                    <div class="minute-hand"></div>
-                    <div class="second-hand"></div>
-                </div>
-                <span class="time-am-pm">PM</span>
-            </div>
-            <div class="day-of-week">
-                <span class="day-number">04</span>
-                <span class="day-name">Sunday</span>
-            </div>
-        </div>
-
-        <!-- Top Middle Widget: To-Do List -->
-        <div class="widget top-middle-widget">
-            <div class="widget-header">
-                <i class="fas fa-check-circle"></i> To-Do List
-            </div>
-            <ul class="todo-list">
-                <li><input type="checkbox" checked> Buy new headphones</li>
-                <li><input type="checkbox"> Visit library for summer reading</li>
-                <li><input type="checkbox"> Get first job</li>
-                <li><input type="checkbox"> Watch Azumanga Daioh</li>
-                <li><input type="checkbox"> Finish Summer Reading</li>
-                <li><input type="checkbox"> Uhhhh idk I forgot</li>
-            </ul>
-        </div>
-
-        <!-- Top Right Widget: Skills & Technologies (formerly Weather) -->
-        <div class="widget top-right-widget">
-            <div class="widget-header">
-                <i class="fas fa-code"></i> Skills & Technologies
-            </div>
-            <div class="skills-grid">
-                <div class="skill-item">
-                    <span class="skill-name">Python</span>
-                    <span class="skill-level">Advanced</span>
-                </div>
-                <div class="skill-item">
-                    <span class="skill-name">JavaScript</span>
-                    <span class="skill-level">Intermediate</span>
-                </div>
-                <div class="skill-item">
-                    <span class="skill-name">HTML/CSS</span>
-                    <span class="skill-level">Expert</span>
-                </div>
-                <div class="skill-item">
-                    <span class="skill-name">React</span>
-                    <span class="skill-level">Intermediate</span>
-                </div>
-                <div class="skill-item">
-                    <span class="skill-name">SQL</span>
-                    <span class="skill-level">Proficient</span>
-                </div>
-                <div class="skill-item">
-                    <span class="skill-name">Git</span>
-                    <span class="skill-level">Proficient</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Middle Left Widget: Research Updates (formerly Calendar) -->
-        <div class="widget middle-left-widget">
-            <div class="widget-header">
-                <i class="fas fa-flask"></i> Research Updates
-            </div>
-            <div class="research-updates-scroll">
-                <div class="update-month">September 2024</div>
-                <div class="update-item">
-                    <span class="update-date">Sept 15, 2024</span>
-                    <span class="update-description">Presented "AI in Healthcare" at the annual tech conference.</span>
-                </div>
-                <div class="update-item">
-                    <span class="update-date">Sept 01, 2024</span>
-                    <span class="update-description">Began literature review for new project on quantum computing.</span>
-                </div>
-                <div class="update-month">August 2024</div>
-                <div class="update-item">
-                    <span class="update-date">Aug 28, 2024</span>
-                    <span class="update-description">Published paper "Optimizing Neural Networks" in Journal of AI.</span>
-                </div>
-                <div class="update-item">
-                    <span class="update-date">Aug 10, 2024</span>
-                    <span class="update-description">Successfully completed phase 1 of data collection for robotics project.</span>
-                </div>
-                <div class="update-item">
-                    <span class="update-date">Aug 01, 2024</span>
-                    <span class="update-description">Initiated new research on sustainable energy solutions.</span>
-                </div>
-            </div>
-            <div class="widget-footer">
-                <a href="#" class="footer-link">edit</a>
-                <a href="#" class="footer-link">settings</a>
-                <a href="#" class="footer-link">info</a>
-            </div>
-        </div>
-
-        <!-- Middle Right Widget: Project Links (formerly Search/App Links) -->
-        <div class="widget middle-right-widget">
-            <div class="widget-header">
-                <i class="fas fa-project-diagram"></i> My Projects
-                <input type="text" placeholder="Search Projects..." class="search-input">
-            </div>
-            <div class="project-links-grid">
-                <a href="https://github.com/yourusername/project1" target="_blank" class="project-link-item">
-                    <i class="fab fa-github"></i>
-                    <span class="project-name">Project Alpha</span>
-                    <span class="project-url">github.com/project1</span>
-                </a>
-                <a href="https://yourportfolio.com/project2" target="_blank" class="project-link-item">
-                    <i class="fas fa-globe"></i>
-                    <span class="project-name">Web App Beta</span>
-                    <span class="project-url">yourportfolio.com/project2</span>
-                </a>
-                <a href="https://dribbble.com/yourusername/project3" target="_blank" class="project-link-item">
-                    <i class="fas fa-palette"></i>
-                    <span class="project-name">Design Portfolio</span>
-                    <span class="project-url">dribbble.com/project3</span>
-                </a>
-                <a href="https://linkedin.com/in/yourusername" target="_blank" class="project-link-item">
-                    <i class="fab fa-linkedin"></i>
-                    <span class="project-name">LinkedIn Profile</span>
-                    <span class="project-url">linkedin.com/in/yourusername</span>
-                </a>
-                <a href="https://medium.com/@yourusername" target="_blank" class="project-link-item">
-                    <i class="fab fa-medium"></i>
-                    <span class="project-name">Tech Blog</span>
-                    <span class="project-url">medium.com/@yourusername</span>
-                </a>
-                <a href="https://stackoverflow.com/users/yourusername" target="_blank" class="project-link-item">
-                    <i class="fab fa-stack-overflow"></i>
-                    <span class="project-name">Stack Overflow</span>
-                    <span class="project-url">stackoverflow.com/yourusername</span>
-                </a>
-            </div>
-            <div class="add-new-project">
-                <i class="fas fa-plus-circle"></i> add new...
-            </div>
-        </div>
-
-        <div class="bottom-right-text">
-            YourName.portfolio.com
-        </div>
-    </div>
-
-    <script>
-        // Function to update the clock display
-        function updateClock() {
-            const now = new Date();
-            const hours = now.getHours();
-            const minutes = now.getMinutes();
-            const seconds = now.getSeconds();
-
-            const hourHand = document.querySelector('.hour-hand');
-            const minuteHand = document.querySelector('.minute-hand');
-            const secondHand = document.querySelector('.second-hand');
-
-            // Calculate rotation for hands
-            const secondDeg = (seconds / 60) * 360;
-            const minuteDeg = ((minutes + seconds / 60) / 60) * 360;
-            const hourDeg = ((hours % 12 + minutes / 60) / 12) * 360;
-
-            secondHand.style.transform = `rotate(${secondDeg}deg)`;
-            minuteHand.style.transform = `rotate(${minuteDeg}deg)`;
-            hourHand.style.transform = `rotate(${hourDeg}deg)`;
-
-            // Update digital time (AM/PM)
-            const ampm = hours >= 12 ? 'PM' : 'AM';
-            const displayHours = hours % 12 || 12; // Convert 0 to 12 for 12-hour format
-            const displayMinutes = minutes < 10 ? '0' + minutes : minutes;
-
-            document.querySelector('.time-am-pm').textContent = `${displayHours}:${displayMinutes} ${ampm}`;
-
-            // Update date display
-            const dayOfMonth = now.getDate();
-            const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-            const month = monthNames[now.getMonth()];
-            const dayOfWeekNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-            const dayOfWeek = dayOfWeekNames[now.getDay()];
-
-            document.querySelector('.day-of-month').textContent = dayOfMonth < 10 ? '0' + dayOfMonth : dayOfMonth;
-            document.querySelector('.month').textContent = month;
-            document.querySelector('.day-name').textContent = dayOfWeek;
+    <title>Your Name - Data Science Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom Frutiger Aero styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            /* More vibrant background gradient for Frutiger Aero feel */
+            background: linear-gradient(135deg, #89f7fe, #66a6ff); /* Brighter blue gradient */
+            background-attachment: fixed;
+            color: #1a202c; /* Dark text for contrast */
+            overflow-x: hidden; /* Prevent horizontal scroll */
+            position: relative; /* For bubble overlay */
         }
 
-        // Initial call and set interval for clock updates
+        /* Bubble overlay effect */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1; /* Behind content */
+            background: radial-gradient(circle at 10% 20%, rgba(255,255,255,0.1) 0%, transparent 20%),
+                        radial-gradient(circle at 70% 80%, rgba(255,255,255,0.1) 0%, transparent 25%),
+                        radial-gradient(circle at 30% 60%, rgba(255,255,255,0.08) 0%, transparent 15%),
+                        radial-gradient(circle at 90% 10%, rgba(255,255,255,0.12) 0%, transparent 22%);
+            background-size: 200px 200px, 300px 300px, 150px 150px, 250px 250px;
+            animation: bubbleMove 30s infinite alternate linear;
+        }
+
+        @keyframes bubbleMove {
+            0% { background-position: 0% 0%, 50% 50%, 20% 80%, 80% 20%; }
+            100% { background-position: 100% 100%, 0% 0%, 80% 20%, 20% 80%; }
+        }
+
+
+        /* Custom scrollbar for a themed look (Webkit browsers) */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(145deg, #74ebd5, #9face6);
+            border-radius: 10px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(145deg, #9face6, #74ebd5);
+        }
+
+
+        .frutiger-card {
+            background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+            backdrop-filter: blur(20px); /* More intense glass effect */
+            border: 1px solid rgba(255, 255, 255, 0.4); /* Brighter border */
+            box-shadow: 0 10px 40px 0 rgba(31, 38, 135, 0.45), inset 0 0 10px rgba(255,255,255,0.2); /* Deeper shadow with inner glow */
+            border-radius: 25px; /* More rounded corners */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden; /* For inner gloss */
+        }
+
+        .frutiger-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(255,255,255,0.15) 0%, transparent 50%, rgba(0,0,0,0.05) 100%);
+            pointer-events: none;
+            border-radius: 25px;
+        }
+
+        .frutiger-card:hover {
+            transform: translateY(-8px); /* More pronounced lift */
+            box-shadow: 0 15px 50px 0 rgba(31, 38, 135, 0.55), inset 0 0 15px rgba(255,255,255,0.3);
+        }
+
+        .frutiger-button {
+            background: linear-gradient(145deg, #74ebd5, #9face6); /* Vibrant button gradient */
+            color: #fff;
+            font-weight: 600;
+            border-radius: 20px; /* More rounded */
+            padding: 14px 32px; /* Larger padding */
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3), inset 0 2px 5px rgba(255,255,255,0.4); /* Deeper shadow with inner highlight */
+            transition: all 0.3s ease;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+            border: none;
+            cursor: pointer;
+            position: relative; /* For subtle shine effect */
+            overflow: hidden;
+        }
+
+        .frutiger-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent); /* Stronger shine */
+            transition: all 0.5s ease;
+            transform: skewX(-20deg);
+        }
+
+        .frutiger-button:hover::before {
+            left: 100%;
+        }
+
+        .frutiger-button:hover {
+            background: linear-gradient(145deg, #9face6, #74ebd5);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4), inset 0 2px 7px rgba(255,255,255,0.5);
+            transform: translateY(-3px);
+        }
+
+        .frutiger-header {
+            background-color: rgba(255, 255, 255, 0.35); /* Slightly less transparent */
+            backdrop-filter: blur(15px); /* More blur */
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5); /* Brighter border */
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15), 0 0 20px rgba(137, 247, 254, 0.5); /* Deeper shadow with subtle glow */
+            border-radius: 0 0 40px 40px; /* More rounded bottom corners for dock feel */
+            padding: 1.5rem 3rem; /* Increased padding */
+        }
+
+        .frutiger-nav-link {
+            color: #edf2f7; /* Light text for nav */
+            font-weight: 600;
+            padding: 0.85rem 1.4rem; /* Larger padding */
+            border-radius: 20px; /* More rounded */
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .frutiger-nav-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(255,255,255,0.1) 0%, transparent 50%, rgba(0,0,0,0.05) 100%);
+            pointer-events: none;
+            border-radius: 20px;
+        }
+
+        .frutiger-nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.35); /* More visible hover */
+            color: #ffffff;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Hero section specific styles */
+        .hero-section {
+            background: linear-gradient(180deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%); /* More prominent gradient */
+            border-radius: 40px; /* More rounded */
+            padding: 6rem 4rem; /* Increased padding */
+            text-align: center;
+            margin-top: 3rem;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2), inset 0 0 20px rgba(255,255,255,0.3); /* Deeper shadow with inner glow */
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .hero-section h1 {
+            font-size: 4.5rem; /* Larger font size */
+            font-weight: 700;
+            color: #fff;
+            text-shadow: 4px 4px 8px rgba(0,0,0,0.5); /* More pronounced shadow */
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-section p {
+            font-size: 2rem; /* Larger font size */
+            color: #e2e8f0;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+            margin-bottom: 3rem;
+        }
+
+        /* Section titles */
+        h2 {
+            font-size: 3.5rem; /* Larger font size */
+            font-weight: 700;
+            color: #fff;
+            text-shadow: 3px 3px 7px rgba(0,0,0,0.4);
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: rgba(0, 0, 0, 0.3); /* Slightly less transparent */
+            backdrop-filter: blur(10px); /* More blur */
+            color: #e2e8f0;
+            padding: 2.5rem 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 40px 40px 0 0; /* More rounded top corners */
+            margin-top: 6rem;
+            box-shadow: 0 -8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Window-like card styling */
+        .frutiger-window-card {
+            border-radius: 25px; /* More rounded */
+            overflow: hidden;
+            background-color: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 10px 40px 0 rgba(31, 38, 135, 0.45), inset 0 0 10px rgba(255,255,255,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .frutiger-window-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 50px 0 rgba(31, 38, 135, 0.55), inset 0 0 15px rgba(255,255,255,0.3);
+        }
+
+        .window-title-bar {
+            background: linear-gradient(180deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.2) 100%); /* Stronger gradient */
+            border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+            padding: 0.85rem 1.75rem; /* Increased padding */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 25px 25px 0 0; /* Only top corners rounded */
+            box-shadow: inset 0 1px 3px rgba(255,255,255,0.3); /* Inner highlight */
+        }
+
+        .window-title-bar span.title-text {
+            font-weight: 600;
+            color: #333;
+            text-shadow: 0 1px 1px rgba(255,255,255,0.5);
+        }
+
+        .window-controls span {
+            display: inline-block;
+            width: 14px; /* Larger controls */
+            height: 14px; /* Larger controls */
+            border-radius: 50%;
+            margin-left: 8px; /* More spacing */
+            border: 1px solid rgba(0,0,0,0.15);
+            box-shadow: inset 0 1px 2px rgba(255,255,255,0.3); /* Inner shine */
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .window-controls .close { background-color: #ff605c; }
+        .window-controls .minimize { background-color: #ffbd44; }
+        .window-controls .maximize { background-color: #00ca4e; }
+
+        .window-controls span:hover {
+            opacity: 0.8;
+            transform: scale(1.1);
+        }
+
+        /* Desktop Widget Styling */
+        .desktop-widget {
+            background-color: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(18px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 8px 30px rgba(31, 38, 135, 0.3), inset 0 0 8px rgba(255,255,255,0.2);
+            border-radius: 20px;
+            padding: 1.5rem;
+            color: #333;
+            text-shadow: 0 1px 1px rgba(255,255,255,0.5);
+        }
+
+        .desktop-widget h3 {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #2d3748;
+        }
+
+        .widget-clock {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            color: #fff;
+            text-shadow: 0 0 10px rgba(255,255,255,0.8), 0 0 20px rgba(116, 235, 213, 0.7);
+        }
+        .widget-date {
+            font-size: 1.2rem;
+            text-align: center;
+            color: #e2e8f0;
+            text-shadow: 0 0 5px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+    <!-- Header (Taskbar/Dock) -->
+    <header class="frutiger-header py-6 px-10 fixed w-full top-0 z-50">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+            <div class="text-4xl font-bold text-white text-shadow-lg mb-4 md:mb-0">
+                <span class="text-blue-200">Your</span> <span class="text-purple-200">Name</span>
+            </div>
+            <nav>
+                <ul class="flex space-x-8">
+                    <li><a href="#about" class="frutiger-nav-link">About</a></li>
+                    <li><a href="#projects" class="frutiger-nav-link">Projects</a></li>
+                    <li><a href="#skills" class="frutiger-nav-link">Skills</a></li>
+                    <li><a href="#contact" class="frutiger-nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow container mx-auto px-6 py-24">
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <h1>Hello, I'm [Your Name]</h1>
+            <p>A Data Scientist passionate about extracting insights and building intelligent solutions.</p>
+            <a href="#projects" class="frutiger-button inline-block">View My Work</a>
+        </section>
+
+        <!-- Desktop Widgets Section (Visual Only) -->
+        <section class="my-20 grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="desktop-widget">
+                <h3 class="text-center">System Clock</h3>
+                <div class="widget-clock" id="current-time"></div>
+                <div class="widget-date" id="current-date"></div>
+            </div>
+            <div class="desktop-widget">
+                <h3 class="text-center">News Feed</h3>
+                <ul class="text-sm space-y-2 text-gray-800">
+                    <li><span class="font-semibold">Headline 1:</span> AI breakthroughs continue to reshape industries.</li>
+                    <li><span class="font-semibold">Headline 2:</span> New data privacy regulations impacting global businesses.</li>
+                    <li><span class="font-semibold">Headline 3:</span> Quantum computing research shows promising advancements.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="my-20 p-8 frutiger-card">
+            <h2 class="mb-8 text-white">About Me</h2>
+            <p class="text-lg leading-relaxed text-gray-800">
+                I am a dedicated Data Scientist with a strong background in machine learning, statistical analysis, and data visualization. My expertise lies in transforming complex datasets into actionable insights and developing predictive models that drive business value. I thrive on solving challenging problems and am always eager to learn new technologies and methodologies in the ever-evolving field of data science.
+                <br><br>
+                With experience in Python (Pandas, NumPy, Scikit-learn, TensorFlow/PyTorch), R, SQL, and various data visualization tools, I am adept at the entire data science lifecycle, from data collection and cleaning to model deployment and interpretation.
+            </p>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="my-20">
+            <h2 class="mb-8 text-white">My Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project Card 1 -->
+                <div class="frutiger-window-card">
+                    <div class="window-title-bar">
+                        <span class="title-text">Project: Churn Prediction</span>
+                        <div class="window-controls">
+                            <span class="close"></span>
+                            <span class="minimize"></span>
+                            <span class="maximize"></span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Customer Churn Prediction</h3>
+                        <p class="text-gray-700 mb-4 flex-grow">Developed a machine learning model to predict customer churn, achieving 90% accuracy using a gradient boosting algorithm. Implemented feature engineering and hyperparameter tuning.</p>
+                        <a href="#" class="frutiger-button text-sm self-start">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="frutiger-window-card">
+                    <div class="window-title-bar">
+                        <span class="title-text">Project: Sentiment Analysis</span>
+                        <div class="window-controls">
+                            <span class="close"></span>
+                            <span class="minimize"></span>
+                            <span class="maximize"></span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Sentiment Analysis of Social Media</h3>
+                        <p class="text-gray-700 mb-4 flex-grow">Utilized NLP techniques to analyze public sentiment from Twitter data, providing insights into brand perception. Used recurrent neural networks (RNNs) for classification.</p>
+                        <a href="#" class="frutiger-button text-sm self-start">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="frutiger-window-card">
+                    <div class="window-title-bar">
+                        <span class="title-text">Project: Sales Dashboard</span>
+                        <div class="window-controls">
+                            <span class="close"></span>
+                            <span class="minimize"></span>
+                            <span class="maximize"></span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Sales Forecasting Dashboard</h3>
+                        <p class="text-gray-700 mb-4 flex-grow">Built an interactive dashboard using Tableau/Power BI for sales forecasting, enabling stakeholders to make data-driven decisions. Integrated time-series models.</p>
+                        <a href="#" class="frutiger-button text-sm self-start">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Add more project cards as needed -->
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="my-20 frutiger-window-card">
+            <div class="window-title-bar">
+                <span class="title-text">Skills & Expertise</span>
+                <div class="window-controls">
+                    <span class="close"></span>
+                    <span class="minimize"></span>
+                    <span class="maximize"></span>
+                </div>
+            </div>
+            <div class="p-8">
+                <h2 class="mb-8 text-white">Skills</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-800">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-3">Programming & Tools</h3>
+                        <ul class="list-disc list-inside space-y-2">
+                            <li>Python (Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn, TensorFlow, PyTorch)</li>
+                            <li>R (ggplot2, dplyr)</li>
+                            <li>SQL (PostgreSQL, MySQL)</li>
+                            <li>Git & GitHub</li>
+                            <li>Jupyter Notebooks, VS Code</li>
+                            <li>Docker</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-3">Data Science & ML</h3>
+                        <ul class="list-disc list-inside space-y-2">
+                            <li>Machine Learning (Supervised, Unsupervised, Reinforcement Learning)</li>
+                            <li>Deep Learning (CNNs, RNNs, Transformers)</li>
+                            <li>Statistical Modeling & Hypothesis Testing</li>
+                            <li>Natural Language Processing (NLP)</li>
+                            <li>Computer Vision</li>
+                            <li>Data Cleaning & Preprocessing</li>
+                            <li>Feature Engineering</li>
+                            <li>Model Evaluation & Deployment</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-3">Data Visualization & BI</h3>
+                        <ul class="list-disc list-inside space-y-2">
+                            <li>Tableau</li>
+                            <li>Power BI</li>
+                            <li>Matplotlib, Seaborn (Python)</li>
+                            <li>Plotly</li>
+                            <li>Dashboards & Reporting</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-3">Cloud & Big Data</h3>
+                        <ul class="list-disc list-inside space-y-2">
+                            <li>AWS (S3, EC2, SageMaker)</li>
+                            <li>Google Cloud Platform (GCP)</li>
+                            <li>Spark, Hadoop (Basic Understanding)</li>
+                            <li>Data Warehousing</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="my-20 frutiger-window-card">
+            <div class="window-title-bar">
+                <span class="title-text">Contact Form</span>
+                <div class="window-controls">
+                    <span class="close"></span>
+                    <span class="minimize"></span>
+                    <span class="maximize"></span>
+                </div>
+            </div>
+            <div class="p-8">
+                <h2 class="mb-8 text-white">Contact Me</h2>
+                <p class="text-lg text-gray-800 mb-6 text-center">
+                    Feel free to reach out if you have any questions, opportunities, or just want to connect!
+                </p>
+                <form class="max-w-xl mx-auto space-y-6">
+                    <div>
+                        <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name</label>
+                        <input type="text" id="name" name="name" class="frutiger-card w-full p-3 rounded-lg border border-white focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white bg-opacity-20 text-gray-900 placeholder-gray-600" placeholder="Your Name">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
+                        <input type="email" id="email" name="email" class="frutiger-card w-full p-3 rounded-lg border border-white focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white bg-opacity-20 text-gray-900 placeholder-gray-600" placeholder="your.email@example.com">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Message</label>
+                        <textarea id="message" name="message" rows="5" class="frutiger-card w-full p-3 rounded-lg border border-white focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white bg-opacity-20 text-gray-900 placeholder-gray-600" placeholder="Your message..."></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="frutiger-button">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Your Name. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript for updating the clock widget
+        function updateClock() {
+            const now = new Date();
+            const timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
+            const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+
+            document.getElementById('current-time').textContent = now.toLocaleTimeString('en-US', timeOptions);
+            document.getElementById('current-date').textContent = now.toLocaleDateString('en-US', dateOptions);
+        }
+
+        // Update clock every second
+        setInterval(updateClock, 1000);
+        // Initial update
         updateClock();
-        setInterval(updateClock, 1000); // Update every second
     </script>
 </body>
 </html>
