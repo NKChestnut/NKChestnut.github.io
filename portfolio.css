@@ -1,83 +1,67 @@
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
-    /* Frutiger Aero + Solarpunk Background: Brighter, atmospheric, with subtle glows */
-    background: linear-gradient(160deg, #b0e0e6 0%, #87ceeb 30%, #a0d6b4 70%, #98fb98 100%); /* Soft blues and greens */
-    position: relative; /* For pseudo-elements */
-    overflow: hidden; /* Prevent body scroll */
-    min-height: 100vh;
+    /* New background image from user, adjusted to cover and be fixed */
+    background: url('https://preview.redd.it/tried-making-frutiger-aurora-metro-wallpapers-on-autodesk-v0-akd1x43ua0dd1.jpg?width=1080&crop=smart&auto=webp&s=d1ead466362e5cb61b275ef0f4f925142fe108f9') no-repeat center center fixed;
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
     color: #fff;
+    overflow: hidden; /* Prevent body scroll */
+    position: relative; /* For any potential overlay effects */
 }
 
-/* Subtle light source effects for Frutiger Aero feel */
-body::before,
-body::after {
+/* Removed the subtle dark overlay to ensure background image is not obscured at all */
+/* body::before {
     content: '';
     position: absolute;
-    border-radius: 50%;
-    filter: blur(100px);
-    opacity: 0.6;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
     z-index: -1;
-}
-
-body::before {
-    background: radial-gradient(circle, rgba(173, 216, 230, 0.8), transparent); /* Light blue glow */
-    width: 400px;
-    height: 400px;
-    top: -100px;
-    left: -100px;
-}
-
-body::after {
-    background: radial-gradient(circle, rgba(144, 238, 144, 0.8), transparent); /* Light green glow */
-    width: 350px;
-    height: 350px;
-    bottom: -100px;
-    right: -100px;
-}
-
+} */
 
 .container {
     display: grid;
-    /* Meticulously adjusted grid columns to match the relative widths in the image */
-    /* Visual estimation: Left (Date/Research) is smallest, Middle (To-Do) medium, Right (Skills) largest */
+    /* Keeping the current sectioning as requested */
     grid-template-columns: 0.75fr 1.1fr 1.35fr;
-    /* Adjusted grid rows to match the two distinct rows of widgets, with more defined heights */
-    grid-template-rows: minmax(260px, auto) minmax(360px, auto); /* More precise min-heights */
-    gap: 18px; /* Slightly adjusted gap */
-    padding: 25px; /* Increased padding around the grid */
-    max-width: 1250px; /* Adjusted max-width to better fit the overall proportions */
-    width: 95%; /* Responsive width */
+    grid-template-rows: minmax(260px, auto) minmax(360px, auto);
+    gap: 18px; /* Consistent gap */
+    padding: 25px;
+    max-width: 1250px;
+    width: 95%;
     position: relative;
-    /* Softer, more diffused overall shadow for the container */
-    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
-    border-radius: 25px; /* More rounded container */
+    /* More pronounced, yet soft, shadow for the container */
+    box-shadow: 0 20px 80px rgba(0, 0, 0, 0.4);
+    border-radius: 25px;
 }
 
 .widget {
-    /* Core frosted glass effect - refined for exact match, with glossy touches */
-    background-color: rgba(255, 255, 255, 0.15); /* Slightly more opaque white for better presence */
-    backdrop-filter: blur(18px); /* Stronger blur for a more pronounced frosted look */
-    -webkit-backdrop-filter: blur(18px); /* Safari compatibility */
-    border-radius: 20px; /* Consistent, slightly more rounded corners */
-    /* Multi-layered shadow for depth and subtle glow, mimicking Frutiger Aero */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), /* Main shadow */
-                inset 0 0 0 1px rgba(255, 255, 255, 0.15); /* Inner light border */
-    /* Subtle gradient border for an iridescent, glossy edge */
+    /* Frutiger Aero Glassmorphism: More prominent, glossy, and reflective */
+    background-color: rgba(255, 255, 255, 0.18); /* Slightly more opaque white for a solid glass feel */
+    backdrop-filter: blur(15px); /* Reduced blur for a clearer view of the background */
+    -webkit-backdrop-filter: blur(15px); /* Safari compatibility */
+    border-radius: 20px;
+    /* Multi-layered shadow for depth, glow, and a distinct "lifted" look */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3), /* Main shadow */
+                inset 0 0 0 1px rgba(255, 255, 255, 0.25), /* Inner highlight for edge */
+                0 0 30px rgba(173, 216, 230, 0.3); /* Subtle blue glow */
+    /* More distinct, glossy border with a subtle gradient */
     border: 1px solid transparent;
-    border-image: linear-gradient(45deg, rgba(255,255,255,0.3), rgba(255,255,255,0.1), rgba(255,255,255,0.3)) 1;
+    border-image: linear-gradient(45deg, rgba(255,255,255,0.4), rgba(255,255,255,0.15), rgba(255,255,255,0.4)) 1;
     display: flex;
     flex-direction: column;
-    color: #f0f0f0; /* Lighter default text color */
+    color: #f5f5f5; /* Brighter default text color */
     position: relative;
-    overflow: hidden; /* Ensure content stays within rounded corners */
-    padding: 22px; /* Consistent padding */
+    overflow: hidden;
+    padding: 25px; /* Increased padding for more spacious feel */
 }
 
-/* Subtle glossy overlay for widgets */
+/* Prominent glossy highlight/reflection effect for widgets */
 .widget::before {
     content: '';
     position: absolute;
@@ -85,13 +69,12 @@ body::after {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, transparent 50%, rgba(0, 0, 0, 0.05) 100%);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, transparent 50%, rgba(0, 0, 0, 0.05) 100%);
     pointer-events: none;
-    border-radius: inherit; /* Inherit border-radius from parent */
+    border-radius: inherit;
 }
 
-
-/* Specific Widget Sizing and Placement based on image */
+/* Specific Widget Background Tints (more vibrant) */
 .top-left-widget {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
@@ -99,159 +82,155 @@ body::after {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 30px 20px; /* Adjusted padding */
-    /* Specific background tint for this widget, slightly darker for depth */
-    background-color: rgba(255, 255, 255, 0.12);
+    padding: 30px 20px;
+    background-color: rgba(255, 255, 255, 0.2); /* Slightly more opaque */
 }
 
 .top-middle-widget {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
-    /* Specific background tint for this widget - more vibrant green tint */
-    background-color: rgba(138, 255, 138, 0.1);
+    background-color: rgba(138, 255, 138, 0.15); /* More vibrant green tint */
 }
 
 .top-right-widget {
     grid-column: 3 / 4;
     grid-row: 1 / 2;
-    /* Specific background tint for this widget - more vibrant blue tint */
-    background-color: rgba(161, 196, 253, 0.1);
+    background-color: rgba(161, 196, 253, 0.15); /* More vibrant blue tint */
 }
 
 .middle-left-widget {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
-    /* Specific background tint for this widget */
-    background-color: rgba(255, 255, 255, 0.12);
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 .middle-right-widget {
-    grid-column: 2 / 4; /* Spans two columns, matching image */
+    grid-column: 2 / 4;
     grid-row: 2 / 3;
-    /* Specific background tint for this widget - more vibrant green tint */
-    background-color: rgba(138, 255, 138, 0.1);
+    background-color: rgba(138, 255, 138, 0.15);
 }
 
 /* Widget Header Styling */
 .widget-header {
-    font-size: 1.1em;
-    font-weight: 600;
-    margin-bottom: 15px;
+    font-size: 1.2em; /* Slightly larger header font */
+    font-weight: 700; /* Bolder */
+    margin-bottom: 18px; /* More spacing */
     display: flex;
     align-items: center;
     color: #fff;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Lighter separator */
-    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15); /* More visible separator */
+    padding-bottom: 12px; /* More padding */
 }
 
 .widget-header i {
     margin-right: 10px;
-    color: #66CC99; /* A more balanced green for icons */
-    text-shadow: 0 0 8px rgba(102, 204, 153, 0.8); /* Stronger, more diffused glow */
+    color: #76E0B0; /* A vibrant, slightly aqua green for icons */
+    text-shadow: 0 0 10px rgba(118, 224, 176, 0.9); /* Stronger, more vibrant glow */
 }
 
 /* Date and Time Widget Styling */
 .date-display {
-    font-size: 4.8em; /* Larger font size for day number */
-    font-weight: 700;
+    font-size: 5em; /* Larger font size for day number */
+    font-weight: 800; /* Even bolder */
     line-height: 1;
     text-align: center;
-    margin-bottom: 0px;
+    margin-bottom: 5px; /* More spacing */
     color: #fff;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); /* Subtle text glow */
 }
 
 .date-display .month {
-    font-size: 0.3em; /* Smaller month text */
+    font-size: 0.3em;
     display: block;
-    font-weight: 400;
-    opacity: 0.7;
-    color: #c0c0c0;
+    font-weight: 600; /* Bolder month text */
+    opacity: 0.8;
+    color: #d0d0d0;
     text-transform: uppercase;
 }
 
 .clock-display {
     position: relative;
-    width: 140px; /* Larger clock */
-    height: 140px;
+    width: 150px; /* Larger clock */
+    height: 150px;
     border-radius: 50%;
-    border: 2px solid rgba(255, 255, 255, 0.25); /* Softer, slightly more visible border */
-    margin: 15px 0; /* Adjusted margin */
+    border: 3px solid rgba(255, 255, 255, 0.3); /* Thicker, more prominent border */
+    margin: 20px 0; /* More spacing */
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.15); /* Lighter background for clock face */
-    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.4), /* Deeper inner shadow */
-                0 0 10px rgba(255, 255, 255, 0.1); /* Subtle outer glow */
+    background-color: rgba(0, 0, 0, 0.2); /* Darker background for clock face */
+    box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.5), /* Deeper inner shadow */
+                0 0 15px rgba(173, 216, 230, 0.2); /* Subtle blue outer glow */
 }
 
 .clock-face::before {
     content: '';
     position: absolute;
-    width: 8px; /* Adjusted center dot size */
-    height: 8px;
+    width: 10px; /* Larger center dot */
+    height: 10px;
     background-color: #fff;
     border-radius: 50%;
     z-index: 10;
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.9); /* Stronger glow for the center dot */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.9); /* Stronger glow */
 }
 
 .hour-hand, .minute-hand, .second-hand {
     position: absolute;
     transform-origin: bottom center;
     background-color: #fff;
-    border-radius: 2px; /* Slightly thicker hands */
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+    border-radius: 2px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4); /* More prominent shadow */
 }
 
 .hour-hand {
     width: 4px;
-    height: 45px; /* Adjusted length */
+    height: 50px; /* Longer hour hand */
     top: 25px;
-    background-color: #66CC99; /* More balanced green */
+    background-color: #76E0B0; /* Vibrant aqua green */
 }
 
 .minute-hand {
     width: 3px;
-    height: 60px; /* Adjusted length */
+    height: 65px; /* Longer minute hand */
     top: 15px;
 }
 
 .second-hand {
     width: 2px;
-    height: 65px; /* Adjusted length */
+    height: 70px; /* Longer second hand */
     top: 10px;
-    background-color: #FF6B6B; /* Red */
+    background-color: #FF6B6B; /* Retained red for contrast */
 }
 
 .time-am-pm {
     position: absolute;
-    font-size: 0.8em; /* Slightly larger font size */
-    bottom: 8px; /* Adjusted position */
-    right: 8px; /* Adjusted position */
-    background-color: rgba(0, 0, 0, 0.4);
-    padding: 3px 7px; /* Adjusted padding */
-    border-radius: 8px;
+    font-size: 0.85em; /* Slightly larger font size */
+    bottom: 10px; /* Adjusted position */
+    right: 10px; /* Adjusted position */
+    background-color: rgba(0, 0, 0, 0.5); /* Darker background */
+    padding: 4px 8px; /* More padding */
+    border-radius: 10px; /* More rounded */
     color: #fff;
 }
 
 .day-of-week {
-    font-size: 1.8em; /* Adjusted day of week font size */
+    font-size: 2em; /* Larger day of week font size */
     text-align: center;
-    margin-top: 10px; /* Adjusted margin */
+    margin-top: 15px; /* More spacing */
     color: #fff;
 }
 
 .day-of-week .day-number {
-    font-size: 1.5em; /* Adjusted day number font size */
-    font-weight: 700;
+    font-size: 1.6em; /* Larger day number font size */
+    font-weight: 800; /* Even bolder */
     display: block;
     line-height: 1;
 }
 
 .day-of-week .day-name {
-    font-size: 0.7em; /* Smaller day name */
-    opacity: 0.7;
-    color: #c0c0c0;
+    font-size: 0.75em; /* Slightly larger day name */
+    opacity: 0.8;
+    color: #d0d0d0;
     text-transform: uppercase;
 }
 
@@ -266,144 +245,145 @@ body::after {
 .todo-list li {
     display: flex;
     align-items: center;
-    margin-bottom: 10px; /* Adjusted spacing */
-    font-size: 0.9em;
-    color: #e0e0e0;
+    margin-bottom: 12px; /* More spacing */
+    font-size: 0.95em; /* Slightly larger font */
+    color: #e5e5e5;
 }
 
 .todo-list li input[type="checkbox"] {
-    margin-right: 10px; /* Adjusted spacing */
-    accent-color: #66CC99; /* More balanced green checkbox */
-    width: 18px; /* Adjusted checkbox size */
-    height: 18px;
+    margin-right: 12px; /* More spacing */
+    accent-color: #76E0B0; /* Vibrant aqua green checkbox */
+    width: 20px; /* Larger checkbox */
+    height: 20px;
     cursor: pointer;
-    border-radius: 4px;
-    /* Subtle glossy effect for checkbox */
-    box-shadow: inset 0 1px 3px rgba(0,0,0,0.3), 0 1px 0 rgba(255,255,255,0.1);
+    border-radius: 5px; /* More rounded */
+    /* Glossy effect for checkbox */
+    box-shadow: inset 0 1px 4px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.2);
 }
 
 /* Skills & Technologies Widget Styling */
 .skills-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 10px; /* Adjusted gap */
-    margin-top: 5px;
+    gap: 12px; /* More spacing */
+    margin-top: 8px; /* More spacing */
 }
 
 .skill-item {
-    background-color: rgba(255, 255, 255, 0.08); /* Slightly more opaque background */
-    border-radius: 10px; /* Slightly more rounded */
-    padding: 10px 12px; /* Adjusted padding */
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly more opaque background */
+    border-radius: 12px; /* More rounded */
+    padding: 12px 15px; /* More padding */
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2); /* Deeper inner shadow */
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); /* Deeper inner shadow */
 }
 
 .skill-name {
-    font-weight: 600;
-    font-size: 1em;
+    font-weight: 700; /* Bolder */
+    font-size: 1.05em; /* Slightly larger font */
     color: #fff;
 }
 
 .skill-level {
-    font-size: 0.75em;
-    color: #b0b0b0;
-    margin-top: 2px;
+    font-size: 0.8em; /* Slightly larger font */
+    color: #c0c0c0;
+    margin-top: 3px;
 }
 
 /* Research Updates Widget Styling */
 .research-updates-scroll {
     flex-grow: 1;
     overflow-y: auto;
-    padding-right: 8px; /* Thinner scrollbar area */
+    padding-right: 10px; /* Wider scrollbar area */
     scrollbar-width: thin; /* Firefox */
-    scrollbar-color: #66CC99 rgba(255, 255, 255, 0.08); /* More balanced green scrollbar */
+    scrollbar-color: #76E0B0 rgba(255, 255, 255, 0.1); /* Vibrant aqua green scrollbar */
 }
 
 /* Webkit scrollbar styling */
 .research-updates-scroll::-webkit-scrollbar {
-    width: 6px; /* Thinner scrollbar */
+    width: 8px; /* Wider scrollbar */
 }
 
 .research-updates-scroll::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.08); /* Lighter track */
+    background: rgba(255, 255, 255, 0.1); /* Lighter track */
     border-radius: 10px;
 }
 
 .research-updates-scroll::-webkit-scrollbar-thumb {
-    background-color: #66CC99; /* More balanced green scrollbar thumb */
+    background-color: #76E0B0; /* Vibrant aqua green scrollbar thumb */
     border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.05); /* Very subtle border */
+    border: 2px solid rgba(255, 255, 255, 0.1); /* More visible border */
 }
 
 
 .update-month {
-    font-size: 1em;
+    font-size: 1.1em; /* Slightly larger font */
     font-weight: 700;
     color: #fff;
-    margin-top: 12px; /* Adjusted margin */
-    margin-bottom: 6px; /* Adjusted margin */
-    padding-bottom: 5px; /* Adjusted padding */
-    border-bottom: 1px dashed rgba(255, 255, 255, 0.1); /* Lighter dashed line */
+    margin-top: 15px; /* More spacing */
+    margin-bottom: 8px; /* More spacing */
+    padding-bottom: 8px; /* More padding */
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.15); /* More visible dashed line */
     position: sticky;
     top: 0;
-    background-color: rgba(255, 255, 255, 0.1); /* Lighter sticky background */
+    background-color: rgba(255, 255, 255, 0.15); /* More opaque sticky background */
     z-index: 1;
 }
 
 .update-item {
-    margin-bottom: 10px; /* Adjusted margin */
-    line-height: 1.3;
+    margin-bottom: 12px; /* More spacing */
+    line-height: 1.4;
 }
 
 .update-date {
-    font-weight: 600;
-    color: #66CC99; /* More balanced green for dates */
+    font-weight: 700; /* Bolder */
+    color: #76E0B0; /* Vibrant aqua green for dates */
     display: block;
-    font-size: 0.9em; /* Adjusted font size */
-    margin-bottom: 2px;
+    font-size: 0.95em; /* Slightly larger font */
+    margin-bottom: 3px;
 }
 
 .update-description {
-    font-size: 0.85em; /* Adjusted font size */
+    font-size: 0.88em; /* Slightly larger font */
     color: #c0c0c0;
 }
 
 .widget-footer {
     display: flex;
     justify-content: space-around;
-    margin-top: 15px; /* Adjusted margin */
-    padding-top: 10px; /* Adjusted padding */
-    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Lighter border */
+    margin-top: 18px; /* More spacing */
+    padding-top: 12px; /* More padding */
+    border-top: 1px solid rgba(255, 255, 255, 0.15); /* More visible border */
 }
 
 .widget-footer .footer-link {
-    color: #66CC99; /* More balanced green */
+    color: #76E0B0; /* Vibrant aqua green */
     text-decoration: none;
     font-weight: 600;
-    padding: 4px 8px;
-    border-radius: 6px;
+    padding: 5px 10px; /* More padding */
+    border-radius: 8px;
     transition: background-color 0.3s ease;
 }
 
 .widget-footer .footer-link:hover {
-    background-color: rgba(102, 204, 153, 0.15); /* Softer hover effect */
+    background-color: rgba(118, 224, 176, 0.25); /* More pronounced hover effect */
 }
 
 /* Project Links Widget Styling */
 .search-input {
     width: calc(100% - 20px);
-    padding: 8px 10px; /* Adjusted padding */
-    margin-top: 10px;
-    margin-bottom: 12px; /* Adjusted margin */
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Softer border */
-    border-radius: 8px; /* Slightly less rounded */
-    background-color: rgba(255, 255, 255, 0.08); /* Lighter background */
+    padding: 9px 12px; /* More padding */
+    margin-top: 12px; /* More spacing */
+    margin-bottom: 15px; /* More spacing */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* More prominent border */
+    border-radius: 10px; /* More rounded */
+    background-color: rgba(255, 255, 255, 0.12); /* Slightly more opaque background */
     color: #fff;
-    font-size: 0.9em;
+    font-size: 0.95em; /* Slightly larger font */
     outline: none;
-    box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2); /* Softer inner shadow */
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3); /* Deeper inner shadow */
 }
 
 .search-input::placeholder {
@@ -412,63 +392,62 @@ body::after {
 
 .project-links-grid {
     display: grid;
-    /* Adjusted grid for project links to match the 3x2 layout in the image */
     grid-template-columns: repeat(3, 1fr);
-    gap: 12px; /* Adjusted gap */
+    gap: 15px; /* More spacing */
     flex-grow: 1;
 }
 
 .project-link-item {
-    background-color: rgba(255, 255, 255, 0.06); /* Lighter background */
-    border-radius: 10px;
-    padding: 12px; /* Adjusted padding */
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly more opaque background */
+    border-radius: 12px; /* More rounded */
+    padding: 15px; /* More padding */
     display: flex;
     flex-direction: column;
     align-items: center;
     text-decoration: none;
-    color: #e0e0e0;
+    color: #e5e5e5;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    /* Subtle glossy shadow for links */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+    /* More prominent glossy shadow for links */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3), inset 0 0 0 1px rgba(255, 255, 255, 0.1);
 }
 
 .project-link-item:hover {
-    background-color: rgba(255, 255, 255, 0.12); /* Softer hover effect */
-    transform: translateY(-2px); /* Subtle lift */
+    background-color: rgba(255, 255, 255, 0.18); /* More pronounced hover effect */
+    transform: translateY(-3px); /* More noticeable lift */
 }
 
 .project-link-item i {
-    font-size: 2.2em; /* Slightly smaller icon size */
-    margin-bottom: 8px;
-    color: #66CC99; /* More balanced green */
-    text-shadow: 0 0 6px rgba(102, 204, 153, 0.8); /* Stronger glow */
+    font-size: 2.5em; /* Larger icon size */
+    margin-bottom: 10px;
+    color: #76E0B0; /* Vibrant aqua green */
+    text-shadow: 0 0 8px rgba(118, 224, 176, 0.9); /* Stronger glow */
 }
 
 .project-name {
-    font-weight: 600;
-    font-size: 0.95em;
+    font-weight: 700; /* Bolder */
+    font-size: 1.05em; /* Slightly larger font */
     text-align: center;
-    margin-bottom: 4px;
+    margin-bottom: 5px;
 }
 
 .project-url {
-    font-size: 0.75em;
-    color: #b0b0b0;
+    font-size: 0.8em; /* Slightly larger font */
+    color: #c0c0c0;
     text-align: center;
     word-break: break-all;
 }
 
 .add-new-project {
-    margin-top: 18px;
+    margin-top: 20px;
     text-align: center;
-    color: #66CC99; /* More balanced green */
-    font-weight: 600;
+    color: #76E0B0; /* Vibrant aqua green */
+    font-weight: 700; /* Bolder */
     cursor: pointer;
     transition: color 0.3s ease;
 }
 
 .add-new-project:hover {
-    color: #80e0b0;
+    color: #90f0c0;
 }
 
 .add-new-project i {
@@ -477,16 +456,16 @@ body::after {
 
 .bottom-right-text {
     position: absolute;
-    bottom: 15px;
-    right: 15px;
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 0.85em;
+    bottom: 20px;
+    right: 20px;
+    color: rgba(255, 255, 255, 0.6); /* More visible */
+    font-size: 0.9em; /* Slightly larger font */
 }
 
 /* Responsive adjustments */
 @media (max-width: 1024px) {
     .container {
-        grid-template-columns: repeat(2, 1fr); /* Two columns on tablets */
+        grid-template-columns: repeat(2, 1fr);
         gap: 15px;
     }
 
@@ -497,25 +476,25 @@ body::after {
         grid-column: 2 / 3;
     }
     .top-right-widget {
-        grid-column: 1 / 3; /* Spans two columns on tablet */
-        grid-row: 2 / 3; /* Moves to second row, spanning */
+        grid-column: 1 / 3;
+        grid-row: 2 / 3;
     }
     .middle-left-widget {
         grid-column: 1 / 2;
-        grid-row: 3 / 4; /* Moves to third row */
+        grid-row: 3 / 4;
     }
     .middle-right-widget {
-        grid-column: 2 / 3; /* Spans one column */
-        grid-row: 3 / 4; /* Moves to third row */
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;
     }
     .project-links-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns for projects on tablets */
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 768px) {
     .container {
-        grid-template-columns: 1fr; /* Single column on mobile */
+        grid-template-columns: 1fr;
         gap: 12px;
         padding: 12px;
     }
@@ -526,21 +505,21 @@ body::after {
     }
 
     .top-left-widget, .top-middle-widget, .top-right-widget, .middle-left-widget, .middle-right-widget {
-        grid-column: 1 / 2; /* All span full width */
-        grid-row: auto; /* Auto row placement */
+        grid-column: 1 / 2;
+        grid-row: auto;
     }
 
     .date-display {
-        font-size: 3em;
+        font-size: 3.2em;
     }
 
     .clock-display {
-        width: 90px;
-        height: 90px;
+        width: 100px;
+        height: 100px;
     }
 
     .project-links-grid {
-        grid-template-columns: 1fr; /* Single column for projects on small screens */
+        grid-template-columns: 1fr;
     }
 
     .bottom-right-text {
