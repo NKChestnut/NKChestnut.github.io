@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+        .container {
+            max-width: 1024px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 0.5rem;
+        }
+        .section-divider {
+            border-bottom: 2px solid #e2e8f0;
+        }
+        .scroll-mt-24 {
+            scroll-margin-top: 6rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+<div class="container mt-8 mb-8">
+
+    <header class="text-center mb-10">
+        <h1 class="text-4xl font-bold text-gray-800">Your Name</h1>
+    </header>
+
+    <nav class="flex justify-center space-x-8 mb-10 text-xl font-medium text-gray-500">
+        <a href="#home" class="nav-link pb-2 border-b-2 border-gray-800 text-gray-800">Home</a>
+        <a href="#cv" class="nav-link pb-2 hover:border-b-2 hover:border-gray-400">CV</a>
+        <a href="#research" class="nav-link pb-2 hover:border-b-2 hover:border-gray-400">Research</a>
+    </nav>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Left Column -->
+        <aside class="space-y-6">
+            <div class="w-full rounded-lg overflow-hidden shadow-lg">
+                <img src="https://placehold.co/400x400/D1D5DB/1F2937?text=Your+Photo" alt="Your Photo" class="w-full h-auto object-cover">
+            </div>
+
+            <div class="text-sm space-y-2 text-gray-600">
+                <p><strong>B.S. in Data Science</strong></p>
+                <p>Clemson University</p>
+                <p>Expected 2028</p>
+                <p>Email: <a href="mailto:your.email@clemson.edu" class="text-blue-600 hover:underline">your.email@clemson.edu</a></p>
+            </div>
+            <a href="#" class="text-blue-600 hover:underline font-semibold">Curriculum Vitae</a>
+        </aside>
+
+        <!-- Right Column -->
+        <main class="md:col-span-2 space-y-8">
+            <!-- Home Sections -->
+            <section id="home" class="content-section scroll-mt-24">
+                <!-- About Section -->
+                <h2 class="text-2xl font-semibold text-gray-700 pb-2 section-divider">About me</h2>
+                <p class="mt-4 text-gray-600">
+                    Welcome to my CV website. I am a dedicated student of data science with a passion for using data to solve complex problems. My academic and professional experiences have focused on data analysis, machine learning, and research.
+                </p>
+
+                <!-- Leadership Section -->
+                <h2 class="text-2xl font-semibold text-gray-700 pb-2 section-divider mt-8">Leadership</h2>
+                <div class="mt-4">
+                    <ul class="list-disc list-inside space-y-1 text-gray-600">
+                        <li>President, Data Science, Engineering, & Analytics Club, Fall 2024</li>
+                        <li>Dixon Global Policy Scholar, May 2025</li>
+                    </ul>
+                </div>
+
+                <!-- Hobbies Section -->
+                <h2 class="text-2xl font-semibold text-gray-700 pb-2 section-divider mt-8">Hobbies</h2>
+                <div class="mt-4">
+                    <ul class="list-disc list-inside space-y-1 text-gray-600">
+                        <li>Foil Fencer, Clemson Club Fencing, Aug 2024</li>
+                        <li>Writer, The Pendulum Magazine Issue 20, Aug 2024</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- CV Sections -->
+            <div id="cv" class="content-section hidden">
+                <!-- Education Section -->
+                <section class="scroll-mt-24">
+                    <h2 class="text-2xl font-semibold text-gray-700 pb-2 section-divider">Education</h2>
+                    <div class="mt-4 space-y-4">
+                        <div>
+                            <p class="font-medium text-lg">B.S. in Data Science, Clemson University, Expected 2028</p>
+                            <p class="text-sm text-gray-500">Concentration: Materials Science & Engineering</p>
+                            <p class="text-sm text-gray-500">Minors: AI & Philosophy</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Academic Experience Section -->
+                <section class="mt-8">
+                    <h2 class="text-2xl font-semibold text-gray-700 pb-2 section-divider">Academic Experience</h2>
+                    <div class="mt-4 space-y-6">
+                        <div>
+                            <p class="font-medium text-lg">Aug 2025: Undergraduate Research Assistant</p>
+                            <p class="text-gray-600">Clemson University Center of Human-AI Interaction (CHAI)</p>
+                            <ul class="list-disc list-inside mt-1 text-gray-500">
+                                <li>Duties included:</li>
+                                <li>Supervisor: Nathan McNeese, Nan(Phoebe) Weng</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="font-medium text-lg">Aug 2025: Undergraduate Researcher</p>
+                            <p class="text-gray-600">Clemson University</p>
+                            <ul class="list-disc list-inside mt-1 text-gray-500">
+                                <li>Duties included: Learning foundations of Fourier Series/Analysis</li>
+                                <li>Design and implement a research study in Fourier Transforms</li>
+                                <li>Supervisor: Scott Scruggs</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="font-medium text-lg">Feb 2025: Volunteer Data Science Researcher</p>
+                            <p class="text-gray-600">The Children’s Museum of the Upstate</p>
+                            <ul class="list-disc list-inside mt-1 text-gray-500">
+                                <li>Duties included: Cleaning financial and visitor datasets from multiple visitor tracking systems</li>
+                                <li>Utilizing Python, R, and ArcGIS to conduct data analysis and generate visualizations for trend reporting</li>
+                                <li>Supervisor: Ellen Breazel</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="font-medium text-lg">Aug 2025-Dec 2025: Undergraduate Research Assistant</p>
+                            <p class="text-gray-600">Clemson University</p>
+                            <ul class="list-disc list-inside mt-1 text-gray-500">
+                                <li>Duties included: Developed a database of 3000+ legitimate and predatory journals</li>
+                                <li>Achieved 76% precision and 70% recall in classifying 3,000+ journals using Random Forest and SGD models</li>
+                                <li>Supervisor: Ruoyu Yang, Karen Burton, Jeryl Jones</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Professional Experience Section -->
+                <section class="mt-8">
+                    <h2 class="text-2xl font-semibold text-gray-700 pb-2 section-divider">Professional experience</h2>
+                    <div class="mt-4 space-y-6">
+                        <div>
+                            <p class="font-medium text-lg">May 2025-Jul 2025: AI Business Analyst Intern</p>
+                            <p class="text-gray-600">Project Alix</p>
+                            <ul class="list-disc list-inside mt-1 text-gray-500">
+                                <li>Duties included: Built a DIY Repairs Agent using LangChain, Pydantic, and OpenCV that analyzed 500+ sample image/text queries, increasing automation of self-repair and reducing tenant wait times in test scenarios.</li>
+                                <li>Created a FastAPI-based scheduling system tested on 30+ dummy jobs, supporting calendar automation for repair teams and reducing manual allocation time by ~40% in simulation.</li>
+                                <li>Collaborated cross-functionally with engineers and founders to prototype a scalable backend architecture for housing-focused AI systems.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Honors Section -->
+                <section class="mt-8">
+                    <h2 class="text-2xl font-semibold text-gray-700 pb-2 section-divider">Honors & Memberships</h2>
+                    <div class="mt-4">
+                        <ul class="list-disc list-inside space-y-1 text-gray-600">
+                            <li>Clemson National Scholars Program (full-ride), Aug 2024</li>
+                            <li>Member, Society of Industrial & Applied Mathematics, Fall 2024</li>
+                            <li>Member, Association Mathematical Society, Fall 2024</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Research Sections -->
+            <div id="research" class="content-section hidden">
+                <section class="scroll-mt-24">
+                    <h2 class="text-2xl font-semibold text-gray-700 pb-2 section-divider">My Research Interests</h2>
+                    <p class="mt-4 text-gray-600">
+                        [Insert your research interests here.]
+                    </p>
+                </section>
+
+                <!-- Presentations Section moved to Research -->
+                <section class="mt-8">
+                    <h2 class="text-2xl font-semibold text-gray-700 pb-2 section-divider">Presentations</h2>
+                    <div class="mt-4 space-y-6">
+                        <div class="space-y-2">
+                            <p class="font-medium text-lg">Presentation 1</p>
+                            <p class="text-sm text-gray-500">citation</p>
+                            <div class="w-full h-48 bg-gray-200 flex items-center justify-center rounded-lg">
+                                <span class="text-gray-500">Image of presentation</span>
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <p class="font-medium text-lg">Presentation 2</p>
+                            <p class="text-sm text-gray-500">citation</p>
+                            <div class="w-full h-48 bg-gray-200 flex items-center justify-center rounded-lg">
+                                <span class="text-gray-500">Image of presentation</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const navLinks = document.querySelectorAll('.nav-link');
+        const contentSections = document.querySelectorAll('.content-section');
+
+        // Function to show a specific section and hide others
+        const showSection = (sectionId) => {
+            contentSections.forEach(section => {
+                section.classList.add('hidden');
+            });
+            const targetSection = document.querySelector(sectionId);
+            if (targetSection) {
+                targetSection.classList.remove('hidden');
+            }
+        };
+
+        // Function to update the active link style
+        const updateActiveLink = (activeLink) => {
+            navLinks.forEach(link => {
+                link.classList.remove('border-gray-800', 'text-gray-800');
+                link.classList.add('hover:border-b-2', 'hover:border-gray-400');
+            });
+            activeLink.classList.remove('hover:border-b-2', 'hover:border-gray-400');
+            activeLink.classList.add('border-b-2', 'border-gray-800', 'text-gray-800');
+        };
+
+        // Add event listeners to navigation links
+        navLinks.forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault();
+                const targetId = link.getAttribute('href');
+                showSection(targetId);
+                updateActiveLink(link);
+            });
+        });
+
+        // Handle initial load to show the home section
+        const initialSection = window.location.hash || '#home';
+        const initialLink = document.querySelector(`a[href="${initialSection}"]`);
+        if (initialLink) {
+            showSection(initialSection);
+            updateActiveLink(initialLink);
+        } else {
+            showSection('#home');
+        }
+    });
+</script>
+
+</body>
+</html>
